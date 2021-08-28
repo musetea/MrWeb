@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "prestart": "tsc",
-    "dev": "nodemon src --signal SIGHUP --deley 1 --exec ts-node src/app.ts "
+    "dev": "nodemon --watch ./src --signal SIGHUP --delay 1 --exec ts-node src/app.ts"
   },
   "repository": {
     "type": "git",
