@@ -1,6 +1,8 @@
 import express from "express";
 import path from "path";
 
+import RealEstate from "./routes/realestate";
+
 const app = express();
 const PORT: number = Number(process.env["PORT"]) || 3001;
 app.set('view engine', 'pug');
@@ -11,9 +13,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 
-app.get("/", (req, res) => {
-   res.render("index");
-});
+app.get("/", (req, res) => { res.render("index"); });
+app.get("/RealEstate", (req, res) => { res.render("RealEstate"); });
+
 
 app.listen(PORT, function () {
    console.log("");

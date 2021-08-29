@@ -1,0 +1,28 @@
+doctype html
+html(lang="ko")
+   head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title Real Estate
+      link(rel="stylesheet", href="../scss/realEstate.css")
+      script(src="../js/realEstate.js" defer) 
+   body 
+      include ./mixin
+      header 
+         a.logo(href="#") 
+            span real 
+            |Estate 
+         nav.navbar  
+            a(href="#home") home 
+            a(href="#services") services 
+            a(href="#featured") featured 
+            a(href="#agents") agents 
+            a(href="#contact") contact 
+         .icons 
+            #menu-bars.fa.fa-bars 
+            a.fas.fa-heart(href="") 
+            a.fas.fa-user(href="") 
+      
+      include ./RealEstate/home 
+      
