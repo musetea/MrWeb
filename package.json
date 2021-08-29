@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/app.js",
-  "type": "module",
   "scripts": {
     "prestart": "tsc",
     "dev": "nodemon --watch ./src --signal SIGHUP --delay 1 --exec ts-node src/app.ts"

@@ -1,6 +1,5 @@
 import express from "express";
 import path from "path";
-// import * as morgan from "morgan"
 
 const app = express();
 const PORT: number = Number(process.env["PORT"]) || 3001;
@@ -10,7 +9,7 @@ app.set('views', path.join(__dirname, "./views"));
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-// app.use(morgan("dev"));
+
 
 app.get("/", (req, res) => {
    res.render("index");
