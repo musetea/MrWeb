@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+   head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title CREATEED CARD
+      link(rel="stylesheet", href="../css/createdcard.css")
+      script(src="../js/createCard.js" defer) 
+   body 
+      .container 
+
+         .card-container 
+            .front 
+               .image 
+                  img(src="../assets/CreateCard/chip.png", alt="")
+                  img(src="../assets/CreateCard/visa.png", alt="")
+               .card-number-box ################
+               .flexBox 
+                  .box 
+                     span card holder 
+                     .card-holder-name Full Name 
+                  .box 
+                     span expires 
+                     .expiration 
+                        span.exp-month mm 
+                        span.exp-year yy 
+            .back 
+               .stripe 
+               .box 
+                  span cvv 
+                  .cvv-box 
+                     img(src="../assets/CreateCard/visa.png", alt="")                  
+
+         form(action="")
+
+            .inputBox   
+               span card number 
+               input.card-number(type="text", maxlength="16", name="card-number")
+            .inputBox   
+               span card holder
+               input.card-holder(type="text", name="card-holder")
+            .flexBox
+               .inputBox    
+                  span expiration mm 
+                  select.expiration-mm(name="card-exp-month")
+                     option(value="month", selected, disabled) month
+                     each month in months
+                        option(value=month)= month 
+               .inputBox    
+                  span expiration year 
+                  select.expiration-year(name="card-exp-year")
+                     option(value="year", selected, disabled) year
+                     each year in years
+                        option(value=year)= year
+               .inputBox   
+                  span cvv
+                  input.card-cvv(type="text", maxlength="4", name="card-cvv")
+            input.submit-btn(type="submit", value="submit")
