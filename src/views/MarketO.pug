@@ -1,0 +1,75 @@
+doctype html
+html(lang="en")
+   head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title MARKET O
+      link(rel="stylesheet", href="../css/marketO.css")
+      script(src="../js/marketO.js" defer) 
+   body
+   include mixin 
+   header.header 
+      a.logo(href="#") marketo.
+      nav.navbar 
+         a(href="#home") home 
+         a(href="#services") services 
+         a(href="#about") about 
+         a(href="#portpolio") portpolio 
+         a(href="#pricing") pricing 
+         a(href="#review") review 
+         a(href="#contact") contact 
+      #maun-btn.fas.fa-bars 
+         
+   //- HOME
+   section#home.home 
+      .content 
+         h3 grow your binuess with us 
+         p Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate, velit iure sequi ab cumque?
+         a.btn(href="") try for free
+         .image 
+            img(src="../assets/marketO/rocket.svg", alt="")
+
+         .cloud.cloud1 
+         .cloud.cloud2 
+   section#services.services 
+      h1.heading our 
+         span services 
+      .box-container 
+         .box 
+            img(src="../assets/marketO/s-1.png", alt="")
+            h3 design 
+            p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, fugit?
+            a.btn(href="") loren more 
+         +addServiceBox({src:"../assets/marketO/s-2.png", title:"seo marketing"})
+         +addServiceBox({src:"../assets/marketO/s-3.png", title:"web hosting"})
+         +addServiceBox({src:"../assets/marketO/s-4.png", title:"digital marketing"})
+         +addServiceBox({src:"../assets/marketO/s-5.png", title:"ad campain"})
+         +addServiceBox({src:"../assets/marketO/s-6.png", title:"conent marketing"})
+
+   //- ABOUT
+   section#about.about 
+      h1.heading 
+         span about 
+         | us
+      .row 
+         .image 
+            img(src="../assets/marketO/about.img", alt="")
+         .content 
+            h3.title big projects start with big dreams 
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium libero quasi id perferendis laudantium facere harum corporis, voluptatibus, aut maiores tempore sunt quia optio sapiente fuga suscipit itaque. Voluptas, autem.
+            .icon-container 
+               .icons   
+                  i.fas.fa-award 
+                  h3 14 award own 
+               .icons   
+                  i.fas.fa-user
+                  h3 250 staticfied clients 
+               .icons   
+                  i.fas.fa-project-diagram 
+                  h3 200 projects completed 
+
+   //- 포트폴리오
+   section#portpolio.portpolio
+      h1.heading our 
+         span portpolio

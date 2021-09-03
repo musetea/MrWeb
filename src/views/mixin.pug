@@ -1,2 +1,9 @@
 mixin addMenuLink(i)
    a(href=i.src, data-text=i.title)= i.title  
+
+mixin addServiceBox(i)
+   .box 
+      img(src=i.src, alt="")
+      h3 i.title 
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, fugit?
+      a.btn(href="") loren more

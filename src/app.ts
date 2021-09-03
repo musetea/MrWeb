@@ -21,7 +21,7 @@ app.get("/CreateCard", (req, res) => {
       years: ["2021", "2022", "2023", "2024", "2025"],
    });
 });
-
+app.get("/MarketO", (req, res) => { res.render("MarketO"); });
 
 
 app.listen(PORT, function () {
