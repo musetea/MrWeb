@@ -1,2 +1,280 @@
 @import "def";
 
+$main-color: #e8786e;
+$black-color:#555;
+$light-color:#777;
+$bg-color: #fceae9;
+
+$border: .1rem solid rgba(0,0,0,0.1);
+$box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.1);
+$radius: 0.5rem;
+
+@mixin viewCenter {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+}
+
+
+*{
+   font-family: "Nunito", sans-serif;
+   transition: all .3s ease-out;
+}
+
+html{
+   font-size: 62.5%;
+   scroll-behavior: smooth;
+   scroll-padding-top: 9rem;
+   overflow-x: hidden;
+}
+
+section {
+   padding: 2rem 9%;
+}
+
+img {
+   width: 100%;
+   height: 100%;
+}
+
+.btn {
+   position: relative;
+   display: inline-block;
+   font-size: 1.7rem;
+   color: #fff;
+   background-color: $main-color;
+   border-radius: $radius;
+   box-shadow: $box-shadow;
+   margin-top: 1rem;
+   padding: .8rem 3rem;
+   cursor: pointer;
+   z-index: 0;
+   overflow: hidden;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0%;
+      height: 100%;
+      background-color: $black-color;
+      z-index: -1;
+      transition: .2s ease-out;
+   }
+   &:hover::before {
+      left: 0;
+      width: 100%;
+   }
+}
+
+.heading {
+   text-align: center;
+   font-size: 4rem;
+   padding-bottom: 3rem;
+   color: $black-color;
+
+   span {
+      color: $main-color;
+      background-color: $bg-color;
+      border-radius: $radius;
+      padding: 0 1.5rem;
+   }
+}
+
+
+
+// 메뉴버튼
+#menu-btn {
+   cursor: pointer;
+   font-size: 2.5rem;
+   padding: 1rem 1.3rem;
+   border-radius: $radius;
+   color: $main-color;
+   background-color: $bg-color;
+   display: none;
+
+   &:hover {
+      background-color: $main-color;
+      color: #fff;
+   }
+}
+
+// 헤더영역 
+header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   background-color: #fff;
+   box-shadow: $box-shadow;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 2rem 9%;
+
+   .logo {
+      font-size: 2.5rem;
+      color: $black-color;
+      font-weight: bolder;
+   }
+
+   .navbar a {
+      font-size: 1.7rem;
+      color: $light-color;
+      margin-left: 2rem;
+
+      &:hover {
+         color: $main-color;
+      }
+   }
+
+   
+
+}
+
+// 홈 화면
+section.home {
+
+   position: relative;
+   padding-top: 10rem;
+   background-color: $bg-color;
+
+   @include viewCenter;
+
+   .content {
+      flex: 1 1 45rem;
+      text-align: center;
+
+      h3{
+         font-size: 3.5rem;
+         color: $black-color;
+         line-height: 1.8;
+      }
+
+      p {
+         font-size: 1.5rem;
+         color: $light-color;
+         line-height: 1.8;
+         padding: 1rem 0;
+      }
+   }
+
+   .image {
+      flex: 1 1 45rem;
+
+      img {
+         width: 100%;
+      }
+   }
+
+   .cloud {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 18rem;
+      background-size: 250rem 18rem;
+      background: url("../assets/MarketO/cloud.png") repeat-x;
+      animation: cloud 10s linear infinite;
+   }
+
+   @keyframes cloud {
+      0%{
+         background-position-x: 0rem;
+      }
+      100%{
+         background-position-x: -250rem;
+      }
+   }
+
+   .cloud1 {
+      opacity: 0.5;
+      height: 20rem;
+      background-size: 250rem 20rem;
+      animation-direction: reverse;
+      animation-duration: 15s;
+   }
+
+   .cloud2 {
+   
+   }
+}
+
+// 서비스 섹션
+section.services {
+
+
+   .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+   }
+}
+
+
+
+// 미디어쿼리
+@media (max-width:991px){
+   html {
+      font-size: 55%;
+   }
+
+   section {
+      padding: 2rem;
+   }
+
+   header {
+      padding: 2rem;
+   }
+
+}
+// 768px
+@media (max-width:768px){
+
+   #menu-btn{
+      display: initial;
+   }
+   header {
+
+      .navbar{
+         width: 30rem;
+         position: absolute;
+         top: 115%;
+         right: 2rem;
+         background-color: #fff;
+         box-shadow: $box-shadow;
+         border: $border;
+         border-radius: $radius;
+         transform: scale(0);
+         transform-origin: top right;
+         opacity: 0;
+
+         a{
+            font-size: 2rem;
+            display: block;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: $radius;
+
+            &:hover {
+               background-color: $bg-color;
+            }
+         }
+      }
+      .navbar.active {
+         transform: scale(1);
+         opacity: 1;
+      }
+   }
+}
+
+// 450px
+@media (max-width:450px){
+   html {
+      font-size: 50%;
+   }
+
+}

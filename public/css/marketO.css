@@ -12,3 +12,270 @@
   border: none;
   text-transform: capitalize;
 }
+
+* {
+  font-family: "Nunito", sans-serif;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: #e8786e;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  padding: .8rem 3rem;
+  cursor: pointer;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #555;
+  z-index: -1;
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.btn:hover::before {
+  left: 0;
+  width: 100%;
+}
+
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  padding-bottom: 3rem;
+  color: #555;
+}
+
+.heading span {
+  color: #e8786e;
+  background-color: #fceae9;
+  border-radius: 0.5rem;
+  padding: 0 1.5rem;
+}
+
+#menu-btn {
+  cursor: pointer;
+  font-size: 2.5rem;
+  padding: 1rem 1.3rem;
+  border-radius: 0.5rem;
+  color: #e8786e;
+  background-color: #fceae9;
+  display: none;
+}
+
+#menu-btn:hover {
+  background-color: #e8786e;
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem 9%;
+}
+
+header .logo {
+  font-size: 2.5rem;
+  color: #555;
+  font-weight: bolder;
+}
+
+header .navbar a {
+  font-size: 1.7rem;
+  color: #777;
+  margin-left: 2rem;
+}
+
+header .navbar a:hover {
+  color: #e8786e;
+}
+
+section.home {
+  position: relative;
+  padding-top: 10rem;
+  background-color: #fceae9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+section.home .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 45rem;
+          flex: 1 1 45rem;
+  text-align: center;
+}
+
+section.home .content h3 {
+  font-size: 3.5rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+section.home .content p {
+  font-size: 1.5rem;
+  color: #777;
+  line-height: 1.8;
+  padding: 1rem 0;
+}
+
+section.home .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 45rem;
+          flex: 1 1 45rem;
+}
+
+section.home .image img {
+  width: 100%;
+}
+
+section.home .cloud {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18rem;
+  background-size: 250rem 18rem;
+  background: url("../assets/MarketO/cloud.png") repeat-x;
+  -webkit-animation: cloud 10s linear infinite;
+          animation: cloud 10s linear infinite;
+}
+
+@-webkit-keyframes cloud {
+  0% {
+    background-position-x: 0rem;
+  }
+  100% {
+    background-position-x: -250rem;
+  }
+}
+
+@keyframes cloud {
+  0% {
+    background-position-x: 0rem;
+  }
+  100% {
+    background-position-x: -250rem;
+  }
+}
+
+section.home .cloud1 {
+  opacity: 0.5;
+  height: 20rem;
+  background-size: 250rem 20rem;
+  animation-direction: reverse;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+}
+
+section.services .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(27rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  section {
+    padding: 2rem;
+  }
+  header {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: initial;
+  }
+  header .navbar {
+    width: 30rem;
+    position: absolute;
+    top: 115%;
+    right: 2rem;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: top right;
+            transform-origin: top right;
+    opacity: 0;
+  }
+  header .navbar a {
+    font-size: 2rem;
+    display: block;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+  }
+  header .navbar a:hover {
+    background-color: #fceae9;
+  }
+  header .navbar.active {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}

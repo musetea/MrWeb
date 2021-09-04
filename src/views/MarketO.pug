@@ -19,7 +19,8 @@ html(lang="en")
          a(href="#pricing") pricing 
          a(href="#review") review 
          a(href="#contact") contact 
-      #maun-btn.fas.fa-bars 
+
+      #menu-btn.fas.fa-bars 
          
    //- HOME
    section#home.home 
@@ -27,11 +28,12 @@ html(lang="en")
          h3 grow your binuess with us 
          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium cupiditate, velit iure sequi ab cumque?
          a.btn(href="") try for free
-         .image 
-            img(src="../assets/marketO/rocket.svg", alt="")
+      .image 
+         img(src="../assets/marketO/rocket.svg", alt="")
 
-         .cloud.cloud1 
-         .cloud.cloud2 
+      .cloud.cloud1 
+      .cloud.cloud2 
+      
    section#services.services 
       h1.heading our 
          span services 
@@ -54,7 +56,7 @@ html(lang="en")
          | us
       .row 
          .image 
-            img(src="../assets/marketO/about.img", alt="")
+            img(src="../assets/marketO/about-img.png", alt="")
          .content 
             h3.title big projects start with big dreams 
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium libero quasi id perferendis laudantium facere harum corporis, voluptatibus, aut maiores tempore sunt quia optio sapiente fuga suscipit itaque. Voluptas, autem.
@@ -73,3 +75,154 @@ html(lang="en")
    section#portpolio.portpolio
       h1.heading our 
          span portpolio
+      .box-container 
+         +addPortPolioBox({seq:"01", src:"../assets/marketO/port-img1.jpg",
+            title:"web design", date:"1st may, 2021"}) 
+         +addPortPolioBox({seq:"02", src:"../assets/marketO/port-img2.jpg",
+            title:"web design", date:"1st may, 2021"}) 
+         +addPortPolioBox({seq:"03", src:"../assets/marketO/port-img3.jpg",
+            title:"web design", date:"1st may, 2021"}) 
+         +addPortPolioBox({seq:"04", src:"../assets/marketO/port-img4.jpg",
+            title:"web design", date:"1st may, 2021"}) 
+         +addPortPolioBox({seq:"05", src:"../assets/marketO/port-img5.jpg",
+            title:"web design", date:"1st may, 2021"}) 
+         +addPortPolioBox({seq:"06", src:"../assets/marketO/port-img6.jpg",
+            title:"web design", date:"1st may, 2021"}) 
+
+   section#pricing.pricing 
+      h1.heading our 
+         span pricing 
+      
+      .box-container 
+         +addPricingBox({title:"basic plan", src:"../assets/marketO/p-1.png", price:"30.99", lists:[
+            "5GB data","2 domains","seo marketing","24 / 7 services","maintainance"
+         ]})
+         +addPricingBox({title:"standard plan", src:"../assets/marketO/p-2.png", price:"50.99", lists:[
+            "10GB data","10 domains","seo marketing","24 / 7 services","maintainance"
+         ]})
+         +addPricingBox({title:"premiumn plan", src:"../assets/marketO/p-3.png", price:"30.99", lists:[
+            "20GB data","20 domains","seo marketing","24 / 7 services","maintainance"
+         ]})
+
+   section#review.review  
+      h1.heading client's  
+         span review 
+
+      .box-container 
+         +addReviewBox({src:"../assets/marketO/pic-1.png", name:"jone doe"})
+         +addReviewBox({src:"../assets/marketO/pic-2.png", name:"jone doe"})
+         +addReviewBox({src:"../assets/marketO/pic-3.png", name:"jone doe"})
+
+   section#contact.contact 
+      h1.heading   
+         span contact
+         | us 
+      
+      .icons-container 
+         .icons 
+            i.fas.fa-phone 
+            h3 our number 
+            p +123-456-7890
+            p +111-222-3333
+         .icons 
+            i.fas.fa-envelope 
+            h3 our email 
+            p  mrweb@gmai.com
+            p  marketO@gmai.com
+         .icons 
+            i.fas.fa-map-marker-alt 
+            h3 our location 
+            p  mumbai, india - 4001410
+            
+      .row 
+         //- iframe.map(src="", frameborder="0")  
+         
+         form(action="")
+            input.box(type="text", placeholder="name") 
+            input.box(type="email", placeholder="email") 
+            input.box(type="number", placeholder="number") 
+            textarea.btn(name="", cols="30", rows="10", placeholder="messages")  
+            input(type="submit", value="send message")
+
+   footer.footer 
+      .box-container 
+         .box 
+            h3 our branches 
+            a(href="") 
+               i.fas.fa-map-marker-alt 
+               | india 
+            a(href="") 
+               i.fas.fa-map-marker-alt 
+               | USA 
+            a(href="") 
+               i.fas.fa-map-marker-alt 
+               | france 
+            a(href="") 
+               i.fas.fa-map-marker-alt 
+               | korea 
+            a(href="") 
+               i.fas.fa-map-marker-alt 
+               | russia 
+
+         .box 
+            h3 quick links 
+            a(href="#home") 
+               i.fas.fa-arrow-right
+               | home 
+            a(href="#services") 
+               i.fas.fa-arrow-right
+               | services 
+            a(href="#about") 
+               i.fas.fa-arrow-right
+               | about 
+            a(href="#portplolio") 
+               i.fas.fa-arrow-right
+               | portplolio 
+            a(href="#pricing") 
+               i.fas.fa-arrow-right
+               | pricing 
+            a(href="#review") 
+               i.fas.fa-arrow-right
+               | review 
+            a(href="#contact") 
+               i.fas.fa-arrow-right
+               | contact 
+            
+         .box 
+            h3 our services 
+            a(href="#") 
+               i.fas.fa-check
+               | web design  
+            a(href="#") 
+               i.fas.fa-check
+               | digital marketing 
+            a(href="#") 
+               i.fas.fa-check
+               | email marketing 
+            a(href="#") 
+               i.fas.fa-check
+               | content marketing 
+            a(href="#") 
+               i.fas.fa-check
+               | seo marketing 
+
+         .box 
+            h3 follow us
+            a(href="#") 
+               i.fab.fa-facebook-f
+               | facebook  
+            a(href="#") 
+               i.fab.fa-twitter
+               | twitter  
+            a(href="#") 
+               i.fab.fa-instagram
+               | instagram  
+            a(href="#") 
+               i.fab.fa-linkedin
+               | linkedin  
+            a(href="#") 
+               i.fab.fa-pinterest
+               | pinterest  
+      .credit created by 
+         span mr. web designer 
+         || all right reserved
