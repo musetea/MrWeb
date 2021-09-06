@@ -13,6 +13,7 @@
   text-transform: capitalize;
 }
 
+@use "./lib/buttons";
 * {
   text-transform: uppercase;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

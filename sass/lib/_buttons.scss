@@ -1,0 +1,17 @@
+
+.button {
+   font-size: 1.7rem;
+   margin-top: 1rem;
+   display: inline-block;
+   padding: 0.8rem 3.5rem;
+   border-radius: 0.5rem;
+   color: red;
+   background-color: lightcoral;
+
+   cursor: pointer;
+
+   &:hover {
+      background-color: red;
+      color: white;
+   }
+}
