@@ -5,10 +5,12 @@ html(lang="ko")
       meta(http-equiv="X-UA-Compatible", content="IE=edge")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
       title Real Estate
-      link(rel="stylesheet", href="../scss/realEstate.css")
+      link(rel="stylesheet", href="../css/realEstate.css")
       script(src="../js/realEstate.js" defer) 
    body 
       include ./mixin
+      include ./RealEstate/mixin 
+
       header 
          a.logo(href="#") 
             span real 
@@ -25,4 +27,50 @@ html(lang="ko")
             a.fas.fa-user(href="") 
       
       include ./RealEstate/home 
-      
+      section#services.services 
+         +Heading({ head:"our", line:"services" })  
+         
+         .box-container 
+            +addServiceBox({src:"../assets/RealEstate/s-1.png", title:"buying home"})
+            +addServiceBox({src:"../assets/RealEstate/s-2.png", title:"renting home"})
+            +addServiceBox({src:"../assets/RealEstate/s-3.png", title:"selling home"})
+
+      section#featured.featured 
+         +Heading({line:"featured", tail:"properties"})
+         .box-container 
+            +addFeatureBox({
+               src:"../assets/RealEstate/img-1.jpg",
+               icon1:"2", icon2:"6",
+               price:"25,000/mo",
+               title:"modern apartments"
+            })
+            +addFeatureBox({
+               src:"../assets/RealEstate/img-2.jpg",
+               icon1:"2", icon2:"6",
+               price:"25,000/mo",
+               title:"modern apartments"
+            })
+            +addFeatureBox({
+               src:"../assets/RealEstate/img-3.jpg",
+               icon1:"2", icon2:"6",
+               price:"25,000/mo",
+               title:"modern apartments"
+            })
+            +addFeatureBox({
+               src:"../assets/RealEstate/img-4.jpg",
+               icon1:"2", icon2:"6",
+               price:"25,000/mo",
+               title:"modern apartments"
+            })
+            +addFeatureBox({
+               src:"../assets/RealEstate/img-5.jpg",
+               icon1:"2", icon2:"6",
+               price:"25,000/mo",
+               title:"modern apartments"
+            })
+            +addFeatureBox({
+               src:"../assets/RealEstate/img-6.jpg",
+               icon1:"2", icon2:"6",
+               price:"25,000/mo",
+               title:"modern apartments"
+            })

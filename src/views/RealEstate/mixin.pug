@@ -1,0 +1,43 @@
+mixin Heading(i)
+   h1.heading= i.head 
+      span= i.line 
+      =i.tail 
+
+mixin addServiceBox(i)
+   .box 
+      img(src=i.src, alt="")
+      h3= i.title 
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum saepe sunt beatae illo voluptas ipsam et quasi iusto, porro vero quo tempore vel delectus sequi voluptatum quas minus, molestiae voluptatem.
+      a.btn(href="#") learn more 
+      
+mixin addFeatureBox(i)
+   .box 
+      .image-container 
+         img(src=i.src, alt="")
+         .info 
+            h3 3 days ago 
+            h3 for rent 
+         .icons 
+            a.fas.fa-film(href="#")
+               h3= i.icon1 
+            a.fas.fa-camera(href="#")
+               h3= i.icon2
+      .content 
+         .price 
+            h3=i.price
+            a.fas.fa-heart(href="#")  
+            a.fas.fa-envelope(href="#")  
+            a.fas.fa-phone(href="#") 
+         .locations 
+            h3=i.title 
+            p jogeshwari, mumbai, india - 400104
+         .details 
+            h3 
+               i.fas.fa-expand 3,500 sqft  
+            h3 
+               i.fas.fa-expand 2 beds  
+            h3 
+               i.fas.fa-expand 3 baths  
+         .buttons 
+            a.btn(href="#") request info  
+            a.btn(href="#") view details  
