@@ -15,11 +15,26 @@ $radius: 0.5rem;
    flex-wrap: wrap;
    gap: 1.5rem;
 }
+// %boxContainer{
+//    display: grid;
+//    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+//    gap: 1.5rem;
+// }
+@mixin boxContainer($min, $gap){
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+   gap: $gap;
+}
+@mixin borderLine(){
+   border: $border;
+   box-shadow: $box-shadow;
+   border-radius: $radius;
+}
 
 
 *{
    font-family: "Nunito", sans-serif;
-   transition: all .3s ease-out;
+   // transition: all .3s ease-out;
 }
 
 html{
@@ -29,14 +44,14 @@ html{
    overflow-x: hidden;
 }
 
-section {
+section, footer {
    padding: 2rem 9%;
 }
 
-img {
-   width: 100%;
-   height: 100%;
-}
+// img {
+//    width: 100%;
+//    height: 100%;
+// }
 
 .btn {
    position: relative;
@@ -94,6 +109,7 @@ img {
    color: $main-color;
    background-color: $bg-color;
    display: none;
+   z-index: 100;
 
    &:hover {
       background-color: $main-color;
@@ -109,6 +125,7 @@ header {
    right: 0;
    background-color: #fff;
    box-shadow: $box-shadow;
+   z-index: 10;
 
    display: flex;
    align-items: center;
@@ -209,8 +226,417 @@ section.services {
 
 
    .box-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+      // @extend %boxContainer;
+      @include boxContainer(27rem, 1.5rem);
+
+      .box{
+         text-align: center;
+         border: $border;
+         box-shadow:$box-shadow;
+         border-radius: $radius;
+         padding: 4rem 2rem;
+
+         img{
+            height: 10rem;
+         }
+
+         h3{
+            font-size: 2.5rem;
+            color: $black-color;
+            padding-top: 1.5rem;
+         }
+
+         p {
+            font-size: 1.5rem;
+            color: $light-color;
+            padding: 1rem 0;
+            line-height: 1.8;
+         }
+      }
+
+   }
+}
+
+// 어바웃 섹션
+section.about {
+
+   .row {
+         display: flex;
+         align-items: center;
+         flex-wrap: wrap;
+         gap: 1.5rem; 
+
+         .image {
+            flex: 1 1 45rem;
+            padding: 2rem;
+
+            img {
+               width: 100%;
+            }
+         }
+
+         .content {
+            flex: 1 1 45rem;
+
+            .title{
+               font-size: 3rem;
+               color: $black-color;
+            }
+
+            p {
+               font-size: 1.5rem;
+               color: $light-color;
+               line-height: 1.8;
+               padding: 1rem 0;
+            }
+
+            .icon-container {
+               display: flex;
+               flex-wrap: wrap;
+               gap: 1.5rem;
+               padding-top: 2rem;
+            }
+
+            .icons {
+               flex:  1 1 15rem;
+               text-align: center;
+               border-radius: $radius;
+               border: $border;
+               padding: 1.5rem;
+
+               i {
+                  width: 5rem;
+                  height: 5rem;
+                  line-height: 5rem;
+                  font-size: 2rem;
+                  color: $main-color;
+                  background-color:$bg-color;
+                  border-radius: 50%;
+               }
+
+               h3 {
+                  font-size: 1.5rem;
+                  color: $light-color;
+                  padding-top: 1rem;
+               }
+            }
+         }
+   }
+}
+
+// 포트폴리오 섹션
+section.portpolio {
+
+   .box-container {
+
+      @include boxContainer(27rem,1.5rem);
+
+      .box{
+         height: 30rem;
+         border-radius: $radius;
+         overflow: hidden;
+         position: relative;
+         box-shadow: $box-shadow;
+
+         
+
+         span {
+            font-size: 5rem;
+            color: $black-color;
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+         }
+
+         img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+         }
+
+         .content {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: -6rem;
+            left: 0;
+            transition-delay: .3s;
+
+            opacity: 0;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            h3{
+               font-size: 2.5rem;
+               padding-top: 0.5rem;
+               color: $black-color;
+            }
+            h3{
+               font-size: 1.5rem;
+               color: $light-color;
+            }
+         }
+      }
+      .box::before{
+         content: "";
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+         background-color: #fff;
+         clip-path: circle(30% at 93% 0);
+         transition: 0.3s linear;
+      }
+      .box:hover::before {
+         clip-path: circle(100%);
+      }
+
+      .box:hover{
+         .content{
+            left: 0;
+            opacity: 1;
+         }
+      }
+
+
+   }
+}
+
+// 프라이스
+section.pricing{
+
+   .box-container{
+      @include boxContainer(30rem, 1.5rem);
+      .box{
+         padding: 2rem;
+         border-radius: $radius;
+         text-align: center;
+         border: $border;
+         box-shadow: $box-shadow;
+
+         h3{
+            font-size: 2.5rem;
+            color: $black-color;
+         }
+
+         img{
+            height: 15rem;
+            margin: 2.5rem 0;
+         }
+
+         .price {
+            font-size: 3.5rem;
+            font-weight: bolder;
+            color: $main-color;
+
+            span{
+               font-size: 2rem;
+               font-weight: lighter;
+               color: $main-color;
+            }
+         }
+
+         ul {
+            padding: 1rem 0;
+
+            li{
+               font-size: 1.7rem;
+               padding: 1rem 0;
+               color: $light-color;
+            }
+         }
+      }
+   }
+}
+
+// 리뷰 섹션 
+section.review {
+
+   .box-container {
+      @include boxContainer(30rem,1.5rem);
+
+      .box {
+         padding: 2rem;
+         border-radius: $radius;
+         border: $border;
+         box-shadow: $box-shadow;
+
+         .user {
+            display: flex;
+            align-items: center;
+            padding-bottom: 1rem;
+
+            img{
+               width: 7rem;
+               height: 7rem;
+               border-radius: 50%;
+               margin: 0 1rem;
+            }
+
+            h3{
+               font-size: 2.2rem;
+               color: $black-color;
+               padding-bottom: 0.5rem;
+            }
+
+            .star i{
+               font-size: 1.5rem;
+               color: $main-color;
+            }
+         }
+
+         i.fa-quote-right {
+            font-size: 5rem;
+            margin-left: auto;
+            color: $bg-color;
+         }
+
+         p{
+            font-size: 1.6rem;
+            padding-top: 1rem;
+            line-height: 1.8;
+            color: $light-color;
+            font-style: italic;
+         }
+      }
+   }
+}
+
+// 컨텍트 섹션
+section.contact{
+
+   .icons-container {
+      @include boxContainer(30rem,1.5rem);
+
+      .icons{
+         padding: 2.5rem;
+         text-align: center;
+         @include borderLine();
+
+         i {
+            font-size: 2.5rem;
+
+            width: 6rem;
+            height: 6rem;
+            line-height: 6rem;
+
+            color: $main-color;
+            background-color: $bg-color;
+            border-radius: 50%;
+         }
+
+         h3 {
+            font-size: 2.5rem;
+            padding: 1rem 0;
+            color: $black-color;
+         }
+
+         p {
+            font-size: 1.5rem;
+            color: $light-color;
+            line-height: 1.5;
+         }
+      }
+   }
+
+   .row {
+      margin-top: 2rem;
+      
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+
+      .map {
+         flex: 1 1 45rem;
+         width: 100%;
+         padding: 2rem;
+
+         @include borderLine();
+      }
+      form {
+         flex: 1 1 45rem;
+         padding: 2rem;
+
+         @include borderLine();
+
+         .box{
+            width: 100%;
+            font-size: 1.6rem;
+            padding: 1rem;
+            margin: 0.7rem 0;
+            color: $black-color;
+            @include borderLine();
+            background-color: #f7f7f7;
+            text-transform: none;
+
+            &:focus {
+               background-color: $bg-color;
+            }
+
+         }
+
+         textarea.box {
+            height: 20rem;
+            text-transform: none;
+         }
+
+         .btn:hover {
+            background-color: $black-color;
+         }
+      }
+   }
+}
+
+// 푸터 
+footer {
+   margin-top: 1rem;
+   background-color: $bg-color;
+
+
+   .box-container {
+      @include boxContainer(23rem, 1fr);
+
+      .box {
+         h3{
+            font-size: 2.5rem;
+            padding: 1rem 0;
+            color: $black-color;
+         }
+
+         a {
+            display: block;
+            font-size: 1.5rem;
+            padding: 1rem 0;
+            color: $light-color;
+
+            i {
+               padding-right: .5rem;
+               color: $main-color;
+            }
+            
+         }
+         a:hover {
+            padding: 2rem;
+         }
+      }
+   }
+
+   .credit {
+      font-size: 2rem;
+      margin-top: 2rem;
+      padding: 2rem 1rem 1rem 1rem;
+      
+      color: $black-color;
+      text-align: center;
+
+      span {
+         color: $main-color;
+      }
    }
 }
 

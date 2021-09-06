@@ -4,7 +4,7 @@ mixin addMenuLink(i)
 mixin addServiceBox(i)
    .box 
       img(src=i.src, alt="")
-      h3 i.title 
+      h3= i.title 
       p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, fugit?
       a.btn(href="") loren more
 
@@ -22,7 +22,7 @@ mixin addPricingBox(i)
       h3= i.title 
       img(src=i.src, alt="")
       .price 
-         span $ 
+         span $
          =i.price  
          span /mo 
       ul 
@@ -37,13 +37,13 @@ mixin addReviewBox(i)
          .info 
             h3= i.name 
             +stars({full:4, half:1})
-      i.fas.fa-quote-right 
+         i.fas.fa-quote-right 
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione sapiente magnam deserunt iure in quam assumenda tempora distinctio nobis pariatur? Et temporibus pariatur dolores fuga natus molestias praesentium exercitationem necessitatibus!
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi maxime quia consequuntur odit culpa provident sint, at sit modi numquam!
 
 
 mixin stars(i)
-   .stars 
+   .star
       i.fas.fa-star 
       i.fas.fa-star 
       i.fas.fa-star 
