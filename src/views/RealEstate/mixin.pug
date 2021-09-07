@@ -41,3 +41,25 @@ mixin addFeatureBox(i)
          .buttons 
             a.btn(href="#") request info  
             a.btn(href="#") view details  
+
+mixin addAgentBox(i)
+   .box 
+      a.fas.fa-envelope(href="#")
+      a.fas.fa-phone(href="#")
+      img(src=i.src, alt="")
+      h3=i.name 
+      span agent 
+      .share 
+         a.fab.fa-facebook-f(href="#") 
+         a.fab.fa-twitter(href="#") 
+         a.fab.fa-instagram(href="#") 
+         a.fab.fa-linkedin(href="#") 
+
+
+mixin addContactIconBox(i)
+   .icons 
+      img(src=i.src, alt="")
+      h3=i.title 
+      each data in i.datas 
+         p=data 
+

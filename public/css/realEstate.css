@@ -13,6 +13,23 @@
   text-transform: capitalize;
 }
 
+.btn {
+  font-size: 1.7rem;
+  margin-top: 1rem;
+  padding: 0.8rem 3.5rem;
+  display: inline-block;
+  text-align: center;
+  border-radius: .5rem;
+  background-color: lightcoral;
+  color: red;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: red;
+  color: #fff;
+}
+
 html {
   font-family: 'Nunito', sans-serif;
   overflow-x: hidden;
@@ -38,8 +55,12 @@ select, input {
           box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
 }
 
-section {
-  padding: 2rem;
+header {
+  padding: 1.5rem;
+}
+
+section, footer {
+  padding: 1.5rem;
 }
 
 .heading {
@@ -124,6 +145,81 @@ header .icons #menu-bars {
   display: none;
 }
 
+section.home {
+  min-height: 100vh;
+  background: url(../assets/RealEstate/home-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.home form {
+  width: 70rem;
+  padding: 2rem;
+  margin-top: 1rem;
+  background-color: #fff;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+section.home form h3 {
+  font-size: 3rem;
+  color: #333;
+  text-align: center;
+}
+
+section.home form .buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5rem;
+}
+
+section.home form .buttons-container .btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+
+section.home form .inputBox {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+section.home form .inputBox input, section.home form .inputBox select {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25rem;
+          flex: 1 1 25rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: .1rem solid #333;
+  -webkit-box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  text-transform: none;
+}
+
+section.home form .btn {
+  width: 100%;
+  margin-top: 2rem;
+}
+
 section.services .box-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,6 +254,89 @@ section.services .box-container .box p {
   line-height: 1.5;
 }
 
+section.agents .box-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+section.agents .box-container .box {
+  width: 26rem;
+  padding: 2rem;
+  position: relative;
+  text-align: center;
+  background-color: #fff;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+section.agents .box-container .box a.fas {
+  font-size: 2rem;
+  color: #333;
+}
+
+section.agents .box-container .box a.fas:hover {
+  color: red;
+}
+
+section.agents .box-container .box a.fa-envelope {
+  position: absolute;
+  top: 1.8rem;
+  left: 2rem;
+}
+
+section.agents .box-container .box a.fa-phone {
+  position: absolute;
+  top: 1.8rem;
+  right: 2rem;
+}
+
+section.agents .box-container .box img {
+  width: 10rem;
+  height: 10rem;
+  margin: 1rem 0;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section.agents .box-container .box h3 {
+  font-size: 2rem;
+  color: #333;
+}
+
+section.agents .box-container .box span {
+  font-size: 1.7rem;
+  color: red;
+}
+
+section.agents .box-container .box .share {
+  padding-top: 2rem;
+}
+
+section.agents .box-container .box .share a {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 2rem;
+  margin: 0 0.3rem;
+  background-color: #f7f7f7;
+  color: #666;
+  border-radius: 0.5rem;
+}
+
+section.agents .box-container .box .share a:hover {
+  background-color: red;
+  color: #fff;
+}
+
 section.featured .box-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -174,7 +353,7 @@ section.featured .box-container .box {
   border: 0.1rem solid rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   background-color: #fff;
 }
@@ -332,6 +511,167 @@ section.featured .box-container .box .content .buttons .btn {
       -ms-flex: 1;
           flex: 1;
   font-size: 1.5rem;
+}
+
+section.contact .icons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+section.contact .icons-container .icons {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25rem;
+          flex: 1 1 25rem;
+  padding: 2rem;
+  background-color: #fff;
+  text-align: center;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+section.contact .icons-container .icons img {
+  height: 6rem;
+}
+
+section.contact .icons-container .icons h3 {
+  font-size: 2rem;
+  color: #333;
+  padding: 1rem;
+}
+
+section.contact .icons-container .icons p {
+  font-size: 1.5rem;
+  color: #666;
+  line-height: 1.5;
+  padding: 0.1rem 0;
+}
+
+section.contact .row {
+  padding: 1rem;
+  background-color: #fff;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+}
+
+section.contact .row form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50rem;
+          flex: 1 1 50rem;
+  padding: 0.5rem 1rem;
+}
+
+section.contact .row form .inputBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.contact .row form .inputBox input,
+section.contact .row form textarea {
+  width: 49%;
+  font-size: 1.7rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #f7f7f7;
+  color: #333;
+  text-transform: none;
+  border-radius: .5rem;
+}
+
+section.contact .row form .inputBox input:focus,
+section.contact .row form textarea:focus {
+  background-color: lightcoral;
+}
+
+section.contact .row form textarea {
+  width: 100%;
+  height: 20rem;
+  resize: none;
+}
+
+section.contact .row .map {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30rem;
+          flex: 1 1 30rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+footer.footer .footer-container {
+  padding: 2rem;
+  background-color: #fff;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+footer.footer .box-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+footer.footer .box-container .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25rem;
+          flex: 1 1 25rem;
+}
+
+footer.footer .box-container .box h3, footer.footer .box-container .box a {
+  padding: 0.5rem 0;
+}
+
+footer.footer .box-container .box h3 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+footer.footer .box-container .box a {
+  font-size: 1.5rem;
+  color: #666;
+  display: block;
+}
+
+footer.footer .box-container .box a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+footer.footer .credit {
+  font-size: 2rem;
+  margin-top: 2rem;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  color: #333;
+  border-top: 0.1px solid rgba(0, 0, 0, 0.1);
+}
+
+footer.footer .credit span {
+  color: red;
 }
 
 @media (max-width: 991px) {

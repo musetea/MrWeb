@@ -16,7 +16,25 @@ $boxShadow: 0 0.5rem 1.5rem rgba(0,0,0, 0.1);
 @mixin borderLine(){
    border: 0.1rem solid rgba(0,0,0, 0.2);
    box-shadow: 0 0.5rem 1rem rgba(0,0,0, 0.1);
-   border-radius: 0.2rem;
+   border-radius: 0.5rem;
+}
+
+.btn{
+   font-size: 1.7rem;
+   margin-top: 1rem;
+   padding: 0.8rem 3.5rem;
+   display: inline-block;
+   text-align: center;
+   border-radius: .5rem;
+
+   background-color: $lightRed;
+   color: $redColor;
+   cursor: pointer;
+
+   &:hover {
+      background-color: $redColor;
+      color: #fff;
+   }
 }
 
 
@@ -41,14 +59,18 @@ select, input{
    border: $border;
    box-shadow: $boxShadow;
 }
+header{
+   padding: 1.5rem;
+}
 
-section {
-   padding: 2rem;
+section, footer {
+   padding: 1.5rem;
 }
 
 .heading {
    font-size: 4rem;
    padding-bottom: 2rem;
+
    color: #333;
    text-align: center;
 
@@ -125,7 +147,61 @@ header {
 
 // 홈화면
 section.home {
+   min-height: 100vh;
+   background: url(../assets/RealEstate/home-bg.jpg) no-repeat;
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   form {
+      width: 70rem;
+      padding: 2rem;
+      margin-top: 1rem;
+
+      background-color: #fff;
+      @include borderLine();
+
+      h3{
+         font-size: 3rem;
+         color: #333;
+         text-align: center;
+      }
+
+      .buttons-container {
+         display: flex;
+         gap: 1.5rem; 
+         
+         .btn{
+            flex: 1;
+            text-align: center;
+         }
+      }
+
+      .inputBox{
+         margin-top: 2rem;
+         display: flex;
+         flex-wrap: wrap;
+         gap: 1.5em;
+
+         input, select{
+            flex: 1 1 25rem;
+            font-size: 1.5rem;
+            padding: 1rem;
+            border: .1rem solid #333;
+            box-shadow: 0 .5rem 1.5rem rgba(0,0,0, 0.1);
+            text-transform: none;
+         }
+      }
+
+      .btn {
+         width: 100%;
+         margin-top: 2rem;     
+      }
+   }
 }
 
 // 서비스 섹션
@@ -157,6 +233,86 @@ section.services {
 
          
 
+      }
+   }
+}
+
+// AGENTS 섹션
+section.agents{
+   .box-container{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+
+      .box{
+         width: 26rem;
+         padding: 2rem;
+         position: relative;
+         text-align: center;
+         background-color: #fff;
+         border: 0.1rem solid rgba(0,0,0, 0.2);
+         box-shadow: 0 0.5rem 1rem rgba(0,0,0, 0.1);
+         border-radius: 0.5rem;
+
+         a.fas{
+            font-size: 2rem;
+            color: #333;
+            &:hover {
+               color: $redColor;
+            }
+         }
+
+         a.fa-envelope{
+            position: absolute;
+            top: 1.8rem;
+            left: 2rem;
+            
+         }
+         a.fa-phone{
+            position: absolute;
+            top: 1.8rem;
+            right: 2rem;
+         }
+
+         img {
+            width: 10rem;
+            height: 10rem;
+            margin: 1rem 0;
+            border-radius: 50%;
+            box-shadow: 0 0 0.5rem rgba(0,0,0, 0.1);
+            object-fit: cover;
+         }
+
+         h3{
+            font-size: 2rem;
+            color: #333;
+         }
+         span {
+            font-size: 1.7rem;
+            color: $redColor;  
+         }
+
+         .share {
+            padding-top: 2rem;
+         }
+
+         .share a{
+            width: 4rem;
+            height: 4rem;
+            line-height: 4rem;
+            font-size: 2rem;
+            margin: 0 0.3rem;
+
+            background-color: #f7f7f7;
+            color: #666;
+
+            border-radius: 0.5rem;
+
+            &:hover{
+               background-color: $redColor;
+               color: #fff;
+            }
+         }
       }
    }
 }
@@ -314,6 +470,142 @@ section.featured{
    }
 
    
+}
+
+// 컨텍트
+section.contact {
+   .icons-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+
+      .icons {
+         flex: 1 1 25rem;
+         padding: 2rem;
+         background-color: #fff;
+         text-align: center;
+
+         @include borderLine();
+
+         img{
+            height: 6rem;
+         }
+
+         h3{
+            font-size: 2rem;
+            color: #333;
+            padding: 1rem;
+         }
+
+         p{
+            font-size: 1.5rem;
+            color: #666;
+            line-height: 1.5;
+            padding: 0.1rem 0;
+         }
+      }
+   }
+   .row {
+      padding: 1rem;
+      background-color: #fff;
+      @include borderLine();
+
+      display: flex;
+      flex-wrap: wrap-reverse;
+
+      form{
+         flex: 1 1 50rem;
+         padding: 0.5rem 1rem;
+
+         .inputBox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            
+         }
+
+         .inputBox input,
+         textarea {
+            width: 49%;
+            font-size: 1.7rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            
+            background-color: #f7f7f7;
+            color: #333;
+            text-transform: none;
+            border-radius: .5rem;
+
+            &:focus {
+               background-color: $lightRed;
+            }
+
+         }
+
+         textarea {
+            width: 100%;
+            height: 20rem;
+            resize: none;
+         }
+      }
+      .map{
+         flex: 1 1 30rem;
+         width: 100%;
+         padding: 1rem;
+      }
+   }
+}
+
+footer.footer{
+   .footer-container{
+      padding: 2rem;
+      background-color: #fff;
+      @include borderLine();
+   }
+
+   .box-container{
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+
+      .box {
+         flex: 1 1 25rem;
+
+         h3, a{
+            padding: 0.5rem 0;
+         }
+         h3{
+            font-size: 2.5rem;
+            color: #333;
+         }
+         a{
+            font-size: 1.5rem;
+            color: #666;
+            display: block;
+
+            &:hover {
+               color: $redColor;
+               text-decoration: underline;
+            }
+         }
+      }
+   }
+
+   .credit {
+      font-size: 2rem;
+      margin-top: 2rem;
+      padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+      text-align: center;
+      color: #333;
+      border-top: 0.1px solid rgba(0,0,0, 0.1);
+
+      span{
+         color: $redColor;
+      }
+   }
 }
 
 
