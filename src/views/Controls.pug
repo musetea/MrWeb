@@ -1,0 +1,18 @@
+html(lang="en")
+   head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title 컨트롤들 
+      link(rel="stylesheet", href="../css/controls.css")
+   body
+      include controls/box 
+      section.box 
+         +Box1({
+            items:[{src:"../assets/Controls/icon-1.png", title:"HTML 5"},
+            {src:"../assets/Controls/icon-2.png", title:"CSS 3"},
+            {src:"../assets/Controls/icon-3.png", title:"JavaScript"},
+            {src:"../assets/Controls/icon-4.png", title:"SASS"},
+            {src:"../assets/Controls/icon-5.png", title:"JQuery"},
+            {src:"../assets/Controls/icon-6.png", title:"React.js"}]
+         })

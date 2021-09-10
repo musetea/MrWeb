@@ -22,13 +22,13 @@ app.get("/CreateCard", (req, res) => {
    });
 });
 app.get("/MarketO", (req, res) => { res.render("MarketO"); });
-
+app.get("/Controls", (req, res) => { res.render("Controls"); });
 
 app.listen(PORT, function () {
    console.log("");
    console.log("-------------------------------------------------------------");
    console.log("");
-   console.log(`서버 구동중 ... | port : ${PORT}`);
+   console.log(`MR.WEB DESINGER 서버 구동중 ... | port : ${PORT}`);
    console.log("");
    console.log("-------------------------------------------------------------");
 });

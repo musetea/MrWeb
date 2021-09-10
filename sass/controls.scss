@@ -1,0 +1,61 @@
+@import "def";
+
+html{
+   font-size: 62.5%;
+}
+
+section.box {
+   font-family: "Poppins", sans-serif;
+
+   .box-container {
+      background: linear-gradient(45deg, blueviolet, lightgreen);
+      padding: 1.5rem 9%;
+      padding-bottom: 10rem;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+      gap: 1.5rem;
+
+      .box {
+         padding: 3rem 2rem;
+
+         background-color: #fff;
+         text-align: center;
+
+         box-shadow: 0 .5rem 1rem rgba($color: #000000, $alpha: .2);
+
+         &:hover {
+            box-shadow: 0 1rem 1.5rem rgba($color: #000000, $alpha: .3);
+            transform: scale(1.02);
+         }
+         img{
+            height: 10rem;
+
+         }
+         h3 {
+            font-size: 2.5rem;
+            color: #333;
+            padding: 1.5rem;
+         }
+         p {
+            font-size: 1.5rem;
+            color: #666;
+            line-height: 1.5;
+         }
+
+         .btn {
+            font-size: 1.7rem;
+            padding: .8rem 2.5rem;
+            border-radius: .5rem;
+            margin-top: 1rem;
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+
+            &:hover {
+               letter-spacing: .1rem;
+            }
+         }
+      }
+   }
+}
