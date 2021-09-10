@@ -2,8 +2,8 @@ section#home.home
    form(action="")
       h3 find your perfect home 
       .buttons-container 
-         a(href="#") for rent 
-         a(href="#") for sell 
+         a.btn(href="#") for rent 
+         a.btn(href="#") for sell 
       
       //-
       .inputBox 
@@ -17,3 +17,48 @@ section#home.home
             option(value="$20000")  $20000
             option(value="$25000")  $25000
             option(value="$30000")  $30000
+         select(name="")  
+            option(disabled, hidden, selected, value="") maximum price 
+            option(value="$35000")  $35000
+            option(value="$40000")  $40000
+            option(value="$50000")  $50000
+            option(value="$55000")  $55000
+            option(value="$60000")  $60000
+            option(value="$65000")  $65000
+         select(name="")  
+            option(disabled, hidden, selected, value="") property type 
+            option(value="Ready To Move")  Ready To Move
+            option(value="under construction")  under construction
+            option(value="furnished")  furnished
+            option(value="semi-furnished")  semi-furnished
+            option(value="unfurnished")  unfurnished
+            
+         select(name="")  
+            option(disabled, hidden, selected, value="") property type  
+            - var types = ["flat", "house", "shop", "warehouse","land"] 
+            each t in types  
+               option(value=t)= t   
+
+         select(name="")  
+            option(disabled, hidden, selected, value="") BHK
+            - var bhks = ["1 BHK", "2 BHK", "3 BHK", "4 BHK","5 BHK"]
+            each bhk in bhks 
+               option(value=bhk)= bhk
+
+         select(name="")  
+            option(disabled, hidden, selected, value="") aminities
+            - var bhks = ["parking space", "swimming pool", "playground", "security","all"]
+            each bhk in bhks 
+               option(value=bhk)= bhk
+         select(name="")  
+            option(disabled, hidden, selected, value="") bedrooms
+            - var bhks = ["1 bedroom", "2 bedroom", "3 bedroom", "4 bedroom","5 bedroom"]
+            each bhk in bhks 
+               option(value=bhk)= bhk
+         select(name="")  
+            option(disabled, hidden, selected, value="") bathrooms
+            - var bhks = ["1 bathroom", "2 bathroom", "3 bathroom", "4 bathroom","5 bathroom"]
+            each bhk in bhks 
+               option(value=bhk)= bhk
+         
+      input.btn(type="submit", value="search property")
