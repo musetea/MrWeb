@@ -1,0 +1,558 @@
+@import "def";
+
+$greenColor: #27ae60;
+$blackColor: #444;
+$lightColor: #777;
+$bgColor:#e6e6e6;
+
+$border: .1rem solid rgba(0,0,0,.2);
+$boxShadow: .4rem .4rem 1rem #ccc,
+            -.4rem -.4rem 1rem #fff;
+// INSET
+$boxShadowInset: .4rem .4rem 1rem #ccc inset,
+            -.4rem -.4rem 1rem #fff inset;
+
+:root{
+   --green:#27ae60;
+   --black:#444;
+   --light-color:#777;
+   --bg-color:#e6e6e6;
+   --border:.1rem solid rgba(0,0,0,.2);
+   --box-shadow:.4rem .4rem 1rem #ccc,
+               -.4rem -.4rem 1rem #fff;
+   --box-shadow-inset:.4rem .4rem 1rem #ccc inset,
+                     -.4rem -.4rem 1rem #fff inset;
+}
+
+@mixin ControlHover(){
+   &:hover {
+      box-shadow: $boxShadowInset;
+      color: $greenColor;
+   }
+}
+@mixin SizeFixed($size){
+   width: $size;
+   height: $size;
+   line-height: $size;
+}
+@mixin BoxContainer($size,$gap){
+   display: grid;
+      grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
+      gap: $gap;
+}
+
+*{
+   font-family: "Poppins", sans-serif;
+}
+
+.btn {
+   display: inline-block;
+   margin-top: 1rem;
+   padding: 1rem 3.5rem;
+   
+   font-size: 1.7rem;
+   background: none;
+   color: $blackColor;
+   
+   border-radius: 0.5rem;
+   box-shadow: $boxShadow;
+
+   cursor: pointer;
+
+   @include ControlHover();
+
+}
+.heading {
+   padding-bottom: 2rem;
+   font-size: 4rem;
+   color: $blackColor;
+   text-align: center;
+   text-transform: uppercase;
+
+   span{
+      color: $greenColor;
+      text-transform: uppercase;
+   }
+}
+
+#menu-btn {
+   @include SizeFixed(5rem);
+   font-size: 2rem;
+   
+   position: fixed;
+   top: 1.5rem;
+   left: 2rem;
+   cursor: pointer;
+   box-shadow: $boxShadow;
+
+   z-index: 1000;
+
+   text-align: center;
+   border-color: $bgColor;
+   
+   display: none;
+
+   &:hover {
+      box-shadow: $boxShadowInset;
+      color: $greenColor;
+   }
+}
+#theme-toggler {
+   @include SizeFixed(5rem);
+   font-size: 2rem;
+   
+   position: fixed;
+   top: 1.5rem;
+   right: 2rem;
+   cursor: pointer;
+   box-shadow: $boxShadow;
+
+   z-index: 1000;
+
+   text-align: center;
+   border-color: $bgColor;
+   
+   @include ControlHover();
+}
+
+
+// HTML 
+html {
+   font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+}
+
+body {
+   background-color: $bgColor;
+   padding-left: 30rem;
+}
+body.active {
+   $blackColor: #fff;
+   $lightColor: #ddd;
+   $bgColor:#222;
+
+   $border: .1rem solid rgba(0,0,0,.4);
+   $boxShadow: .4rem .4rem 1rem #111,
+               -.4rem -.4rem 1rem #333;
+   // INSET
+   $boxShadowInset: .4rem .4rem 1rem #111 inset,
+            -.4rem -.4rem 1rem #333 inset;
+}
+
+section {
+   min-height: 100vh;
+   padding: 2rem;
+}
+
+
+header {
+   width: 30rem;
+   height: 100%;
+   padding: 2rem;
+   
+   position: fixed;
+   top: 0;
+   left: 0;
+
+   border-right: $border;
+   background-color: $bgColor;
+
+   z-index: 999;
+   text-align: center;
+
+   .user img {
+      height: 18rem;
+      width: 18rem;
+      margin: 1rem 0;
+      border-radius: 50%;
+      box-shadow: $boxShadow;
+
+      border: 1rem solid transparent;
+   }
+
+   .user {
+      h3{
+         font-size: 2.5rem;
+         color: $blackColor;
+      }
+      p{
+         font-size: 1.5rem;
+         color: $greenColor;
+      }
+   }
+
+   nav {
+      padding-top: 1rem;
+
+      a {
+         display: block;
+         margin: 1.5rem 0;
+         padding: 0.7rem;
+         font-size: 2rem;
+         
+         box-shadow: $boxShadow;
+         border-radius: 5rem;
+         
+         color: $blackColor;
+
+         @include ControlHover();
+      }
+   }
+}
+
+section.home {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-flow: column;
+   text-align: center;
+
+   .content {
+
+      h3{
+         font-size: 7rem;
+         color: $blackColor;
+         line-height: 1.1;
+
+         text-transform: uppercase;
+      }
+      p {
+         font-size: 2rem;
+         color: $greenColor;
+         padding-bottom: 2rem;
+      }
+
+   }
+
+   .share {
+      position: relative;
+      top: 10rem;
+      padding: 1rem;
+
+      border-radius: .5rem;
+      box-shadow: $boxShadow;
+
+      a{
+         @include SizeFixed(5rem);
+         margin: .5rem;
+
+         font-size: 2rem;
+         color: $blackColor;
+
+         box-shadow: $boxShadow;
+         border-radius: 0.5rem;
+
+         @include ControlHover();
+      }
+   }
+}
+
+// ABOUT 
+section.about{
+
+   .row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap-reverse;
+      gap: 2rem;
+      
+      .box-container {
+         flex: 1 1 40rem;
+
+         display: flex;
+         flex-wrap: wrap;
+         gap: 1.5rem;
+
+         .box {
+            flex: 1 1 18rem;
+            padding: 2rem;
+
+            box-shadow: $boxShadow;
+            border-radius: .5rem;
+            text-align: center;
+
+            h3{
+               font-size: 5rem;
+               color: $blackColor;
+               line-height: 1.1rem;
+            }
+            p{
+               padding: 0.5rem 0;
+               font-size: 1.7rem;
+               color: $lightColor;
+            }
+         }
+      }
+
+      .content {
+         flex: 1 1 40rem;
+
+         h3{
+            font-size: 3.5rem;
+            color: $blackColor;
+            list-style: 1.8;
+
+            span{
+               color: $greenColor;
+            }
+         }
+         p{
+            padding: 1rem 0;
+            font-size: 1.7rem;
+            line-height: 1.8;
+            color: $lightColor;
+         }
+
+
+      }
+
+
+      // .row {
+         .progress {
+            flex:  1 1 40rem;
+
+            h3{
+               font-size: 2rem;
+               font-weight: normal;
+               color: $blackColor;
+
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+
+            }
+
+            .bar {
+               height: 2rem;
+               margin: 1rem 0;
+               padding: 0.5rem;
+   
+               box-shadow: $boxShadow;
+               border-radius: 5rem;
+   
+               span {
+                  display: block;
+                  height: 100%;
+                  background-color: $greenColor;
+                  border-radius: 5rem;
+               }
+            }
+            .bar11{ width: 90%; }
+            .bar12{ width: 75%;  }
+            .bar13{ width: 80%; }
+            .bar21{ width: 90%; }
+            .bar22{ width: 80%; }
+            .bar23{ width: 85%; }
+         }
+      // }
+      
+   }
+   .row:nth-child(3){
+      padding-top: 2rem;
+   }
+
+   
+
+}
+
+// 서비스
+section.services{
+
+   .box-container{
+      @include BoxContainer(27rem, 2rem);
+
+      .box {
+         padding: 2rem;
+         z-index: 0;
+
+         box-shadow: $boxShadow;
+         border-radius: .5rem;
+         overflow: hidden;
+         position: relative;
+         
+         i {
+            padding-bottom: 5rem;
+            font-size: 4rem;
+            color: #fff;
+         }
+
+         h3{
+            font-size: 2rem;
+            padding-bottom: 1rem;
+            color:$blackColor;
+         }
+         p{
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color:$lightColor;
+         }
+      }
+      .box::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: $greenColor;
+         z-index: -1;
+         clip-path: circle(9rem at 0% 5%);
+         transition: .3s linear;
+      }
+      .box:hover::before {
+         clip-path: circle(100%);
+      }
+      .box:hover > *{
+         color: #fff;
+      }
+   }
+}
+
+// 포트폴리오
+section.portfolio{
+
+   .box-container {
+      @include BoxContainer(27rem, 2rem);
+
+
+      .box {
+         height: 25rem;
+         overflow: hidden;
+         box-shadow: $boxShadow;
+         border: 1rem solid transparent;
+         border-radius: 0.5rem;
+         
+         position: relative;
+
+         img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+
+         .content{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $bgColor;
+
+            display: grid;
+            place-items: center;
+            transform: scale(0);
+
+            h3{
+               font-size: 2.5rem;
+               color: $blackColor;
+
+               text-transform: uppercase;
+               transform: translateY(-5rem);
+               opacity: 0;
+               transition-delay: .3s;
+            }
+         }
+      }
+      .box:hover {
+         .content {
+            transform: scale(1);
+
+            h3{
+               opacity: 1;
+               transform: translateY(0rem);
+            }
+         }
+      }
+   }
+}
+
+// 컨텍트
+section.contact{
+
+   form{
+      padding: 2rem;
+      margin: 1rem auto;
+      max-width: 70rem;
+      box-shadow: $boxShadow;
+      border-radius: .5rem;
+
+      .box {
+         width: 100%;
+         margin: 0.7rem 0;
+         padding: 1rem 1.5rem;
+         font-size: 1.7rem;
+
+         box-shadow: $boxShadow;
+         border-radius: 0.5rem;
+
+         color: $blackColor;
+         background: none;
+         text-transform: none;
+
+      }
+      .box:focus {
+         box-shadow: $boxShadowInset;
+      }
+
+      textarea{
+         height: 20rem;
+         resize: none;  
+      }
+   }
+}
+
+// 푸터 
+footer {
+   .credits{
+      margin-top: 1rem;
+      padding: 2.5rem 1rem;
+      font-size: 2rem;
+
+      text-align: center;
+      border-top: $border;
+      color: $blackColor;
+
+      span{
+         color: $greenColor;
+      }
+      
+   }
+}
+
+
+// 991PX
+@media (max-width:991px) {
+   html{
+      font-size: 55%;
+   }
+
+   body {
+      padding-left: 0;
+
+   }
+
+   header {
+      left: -110%;
+   }
+   header.active {
+      left: 0;
+      transition: left 0.5s linear;
+   }
+
+   #menu-btn{
+      display: initial;
+   }
+}
+
+// 450PX
+@media (max-width:450px) {
+   html{
+      font-size: 50%;
+   }
+
+   header {
+      width: 100%;
+      border-right: 0;
+   }
+}
