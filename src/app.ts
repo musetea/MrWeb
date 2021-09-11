@@ -23,6 +23,8 @@ app.get("/CreateCard", (req, res) => {
 });
 app.get("/MarketO", (req, res) => { res.render("MarketO"); });
 app.get("/Controls", (req, res) => { res.render("Controls"); });
+app.get("/PortPolio", (req, res) => { res.render("PortPolio"); });
+
 
 app.listen(PORT, function () {
    console.log("");

@@ -1,0 +1,168 @@
+doctype html
+html(lang="en")
+   head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title PORTPOLIO MR.WEB
+      link(rel="stylesheet", href="../css/PortPolio.css")
+      script(src="../js/PortPolio.js" defer) 
+   body
+
+      mixin ProgressItem(i)
+         h3= i.title
+            span=i.value
+         .bar 
+            span(class=i.barId)
+
+      header.header 
+         .user 
+            img(src="../assets/PortPolio/user-img.png", alt="")
+            h3 shaikh anas 
+            p front-end developer 
+         
+         nav.navbar 
+            a(href="#home") home
+            a(href="#about") about
+            a(href="#services") services
+            a(href="#portpolio") portpolio
+            a(href="#contact") contact
+      //- 메뉴버튼
+      .fas.fa-bars#menu-btn
+      .fas.fa-moon#theme-toggler
+
+      //- 
+      section#home.home 
+         .content 
+            h3 shaikh anas 
+            p i am a front-end developer
+            a.btn(href="#") download CV  
+         .share 
+            a.fab.fa-facebook-f(href="#") 
+            a.fab.fa-twitter(href="#") 
+            a.fab.fa-instagram(href="#") 
+            a.fab.fa-linkedin(href="#") 
+            a.fab.fa-pinterest(href="#") 
+
+      //- 
+      section#about.about 
+         h1.heading 
+            span about 
+            | me
+            
+         .row 
+            .box-container 
+               .box 
+                  h3 2+
+                  p years of experience 
+               .box 
+                  h3 450+
+                  p staticfied clients 
+               .box 
+                  h3 190+
+                  p working hours
+               .box 
+                  h3 10+
+                  p awards won
+            .content 
+               h3 my name is 
+                  span shaikh anas 
+               p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium nesciunt autem modi reiciendis natus quod rerum sequi porro corporis molestias expedita nulla eos fugit illum, in facere atque impedit ex.
+               a.btn(href="#contact") contact me
+
+         .row 
+            .progress 
+               +ProgressItem({title:"web design", value:"90%", barId:"bar11"})
+               +ProgressItem({title:"graphic design", value:"75%",barId:"bar12"})
+               +ProgressItem({title:"UI/UX design", value:"80%", barId:"bar13"})
+               
+            .progress 
+               +ProgressItem({title:"HTML", value:"90%", barId:"bar21"})
+               +ProgressItem({title:"CSS", value:"80%", barId:"bar22"})
+               +ProgressItem({title:"JAVASCRIPT", value:"85%", barId:"bar23"})
+            
+
+      //- 서비스섹션
+      section.services#services 
+         h1.heading my 
+            span services 
+         
+         .box-container 
+            .box 
+               i.fas.fa-code 
+               h3 web design 
+               p Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eveniet doloremque aut perspiciatis molestiae nesciunt.
+               a(href="") 
+            .box 
+               i.fas.fa-paint-brush  
+               h3 graph design 
+               p Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eveniet doloremque aut perspiciatis molestiae nesciunt.
+               a(href="") 
+            .box 
+               i.fas.fa-mobile  
+               h3 responsive  design 
+               p Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eveniet doloremque aut perspiciatis molestiae nesciunt.
+               a(href="") 
+            .box 
+               i.fas.fa-bullhorn  
+               h3 digital marketing 
+               p Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eveniet doloremque aut perspiciatis molestiae nesciunt.
+               a(href="") 
+            .box 
+               i.fas.fa-search-dollar
+               h3 SEO marketing 
+               p Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eveniet doloremque aut perspiciatis molestiae nesciunt.
+               a(href="") 
+            .box 
+               i.fab.fa-wordpress
+               h3 word press
+               p Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eveniet doloremque aut perspiciatis molestiae nesciunt.
+               a(href="") 
+
+      //- 포트폴리오
+      section.portfolio#portfolio 
+         h1.heading my 
+            span portfolio 
+         
+         .box-container 
+            .box 
+               img(src="../assets/PortPolio/img-1.jpg", alt="")
+               .content 
+                  h3 project 01
+            .box 
+               img(src="../assets/PortPolio/img-2.jpg", alt="")
+               .content 
+                  h3 project 02
+            .box 
+               img(src="../assets/PortPolio/img-3.jpg", alt="")
+               .content 
+                  h3 project 03
+            .box 
+               img(src="../assets/PortPolio/img-4.jpg", alt="")
+               .content 
+                  h3 project 04
+            .box 
+               img(src="../assets/PortPolio/img-5.jpg", alt="")
+               .content 
+                  h3 project 05
+            .box 
+               img(src="../assets/PortPolio/img-6.jpg", alt="")
+               .content 
+                  h3 project 06
+                  
+      //- 포트폴리오
+      section.contact#contact 
+         h1.heading  
+            span contact 
+            | me 
+         form(action="")
+            input.box(type="text", placeholder="your name") 
+            input.box(type="email", placeholder="your email") 
+            input.box(type="text", placeholder="subject") 
+            textarea.box(name="", cols="30", rows="10", placeholder="your message") 
+            input.btn(type="submit", value="send message") 
+      
+      footer.footer 
+         .credits created by 
+            span mr. web designer 
+            || all rights reserved
