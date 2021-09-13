@@ -1,0 +1,328 @@
+@import "def";
+
+$black:#130f40;
+$white:#fff;
+$gradient: linear-gradient(darkviolet, deeppink);
+$background: rgba(255,255,255, .1);
+$shadow: 0 .5rem 1rem rgba(0,0,0, .1);
+$border: .1rem  solid rgba(255,255,255, .1);
+$borderSide: .1rem  solid rgba(255,255,255, .3);
+$radius:.5rem;
+$defSize: 1.7rem;
+$menuHide: polygon(0 0, 100% 0, 100% 0, 0 0);
+$menuShow: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+// 유틸영역 (클래스 믹스인)
+@mixin border(){
+   border: $border;
+   border-left: $borderSide;
+   border-top: $borderSide;
+   border-radius: $radius;
+}
+@mixin gridCenter($size, $gap){
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
+   gap: $gap;
+}
+
+.btn{
+   margin-top: 1rem;
+   padding: .8rem 3rem;
+   display: inline-block;
+   font-size: 1.7rem;
+   background-color: $white;
+   color: $black;
+   border-radius: $radius;
+   box-shadow: $shadow;
+   cursor: pointer;
+
+   &:hover{
+      letter-spacing: 1;
+   }
+}
+
+.heading{
+   padding-bottom: 2.5rem;
+   text-align: center;
+
+   span{
+      font-size: 4rem;
+      padding: .5rem 1.5rem;
+      @include border();
+      background-color: $background;
+      color: $white;
+      box-shadow: $shadow;
+      text-shadow: 0 .5rem 1rem rgba(0,0,0, .1)
+      
+   }
+}
+
+// ==========
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   scroll-padding-top: 10rem;
+   text-transform: capitalize;
+}
+html::-webkit-scrollbar{
+   width: 1rem;
+}
+html::-webkit-scrollbar-track{
+   background: $gradient;
+}
+html::-webkit-scrollbar-thumb{
+   background: $white;
+   border-radius: 5rem;
+}
+
+section{
+   padding: 2rem 9%;
+}
+h3{
+   font-size: 4rem;
+   line-height: 1.8;
+   text-transform: uppercase;
+   color: $white;
+   text-shadow: 0 .5rem 1rem rgba(0,0,0, .1);
+}
+
+// 
+// ==============
+
+.gradient-background{
+   height: 100vh;
+   width: 100%;
+   background: $gradient;
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: -1;
+   overflow: hidden;
+
+   .animated-box{
+      position: absolute;
+      display: block;
+      background: rgba(255,255,255, .2);
+      pointer-events: none;
+      border-radius: $radius;
+      animation: animate 3s linear infinite;
+   }
+   @keyframes animate {
+      0%{
+         opacity: 0;
+         transform: scale(0) translateY(-200%) rotate(0deg);
+      }
+      10%{
+         opacity: 1;
+      }
+      90%{
+         opacity: 1;
+      }
+      100%{
+         opacity: 0;
+         transform: scale(1) translateY(-500%) rotate(360deg);
+      }
+   }
+}
+
+// - 헤더영역
+.header{
+   position: fixed;
+   top: 1.5rem;
+   left: 50%;
+   width: 95%;
+   padding: 2rem;
+   background: $background;
+   @include border();
+   box-shadow: $shadow;
+
+   transform: translateX(-50%);
+   z-index: 1000;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   // 로고영역
+   .logo{
+      font-size: 2.5rem;
+      font-weight: bolder;
+      text-transform: uppercase;
+      color: $white;
+
+      i{
+         color: $black;
+      }
+   }
+   // 네비게이션영역
+   .navbar{
+
+      a{
+         margin-left: 2rem;
+         font-size: $defSize;
+         color: $white;
+      }
+      a:hover{
+         color: $black;
+      }
+   }
+   // 메뉴버튼
+   #menu-btn{
+      font-size: 3rem;
+      color: $white;
+      cursor: pointer;
+      display: none;
+   }
+}
+
+// 홈영역
+.home{
+   height: 100vh;
+   width: 100%;
+   padding: 7rem 2rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   .content {
+      width: 75rem;
+      text-align: center;
+
+      p{
+         padding: 1rem 0;
+         font-size: 2rem;
+         // font-weight: 300;
+         line-height: 1.8;
+         color: $white;
+
+      }
+   }
+}
+
+// 코스영역
+.courese{
+
+   .box-container{
+      @include gridCenter(30rem, 1.5rem);
+   }
+   .box{
+      padding: 2rem;
+      text-align: center;
+      @include border();
+      background-color: $background;
+      box-shadow: $shadow;
+      backdrop-filter: blur(.4rem);
+
+      // 이미지
+      img{
+         height: 20rem;
+      }
+      h3{
+         font-size: 2rem;
+      }
+      p{
+         padding: 1rem 0;
+         font-size: 1.5rem;
+         color: $white;
+         line-height: 1.8;
+      }
+      .icons{
+         margin-top: 2rem;
+         padding-top: 1.5rem;
+         border-top: $borderSide;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+         a{
+            font-size: 1.6rem;
+            color: $white;
+
+            &:hover{
+               color: $black;
+            }
+
+            i{
+               padding-right: .5rem;
+            }
+         }
+      }
+   }
+}
+
+
+// ==================================
+
+// 미디어쿼리 작업 
+@media (max-width:991px){
+   html{
+      font-size: 55%;
+   }
+   section{
+      padding: 2rem;
+   }
+   
+}
+@media (max-width:768px){
+   
+   .header {
+
+      // 네비게이션영역 
+      .navbar{
+         position: absolute;
+         top: 115%;
+         left: 0;
+         right: 0;
+         padding: .5rem 1.5rem;
+         border-radius: $radius;
+         box-shadow: $shadow;
+         background: $gradient;
+         transition: .3s linear;
+         clip-path: $menuHide;
+
+         // 링크영역
+         a{
+            display: block;
+            margin: 1.2rem 0;
+            padding: 1.5rem;
+            font-size: 2rem;
+            @include border();
+            background: $background;
+         }
+
+      }
+      .navbar.active{
+         clip-path: $menuShow;
+      }
+
+      // 메뉴버튼
+      #menu-btn{
+         display: initial;
+      }
+   }
+   // 홈영역
+   .home{
+      .content{
+         h3{
+            font-size: 3.5rem;
+         }
+         p{
+            font-size: 1.6rem;
+         }
+      }
+   }
+   
+}
+@media (max-width:450px){
+   html{
+      font-size: 50%;
+   }
+
+   .heading{
+      span{
+         font-size: 3rem;
+      }
+   }
+}

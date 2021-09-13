@@ -1,0 +1,74 @@
+html(lang="en")
+   head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title Glassmorphism Response 
+      link(rel="stylesheet", href="../css/Glassmorphism.css")
+      script(src="../js/Glassmorphism.js" defer) 
+   body 
+      //- 백그라운드영역
+      .gradient-background
+      //- 헤더영역
+      header.header 
+         a.logo(href="#")
+            i.fas.fa-graduation-cap 
+            | logo 
+         - var links = ["home","courese","teachers","plan","review","contact"]
+         nav.navbar
+            each link in links 
+               a(href=`#${link}`)= link
+         //- 메뉴버튼
+         i.fas.fa-bars#menu-btn
+
+      //- 홈영역
+      section#home.home 
+         .content 
+            h3 Discover a new way of learning
+            p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat ab doloremque assumenda eos illum, 
+               | molestiae est dicta vero atque praesentium animi at omnis natus eligendi cum hic minus asperiores sequi.
+            a.btn(href="#") read more 
+      //- ===========================
+      //- 코스영역
+      mixin Heading(i)
+         h1.heading=i.h1 
+            span=i.span 
+      mixin CourseBox(i)
+         .box 
+            img(src=i.src, alt="")
+            h3=i.title 
+            p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, laboriosam. Non quisquam laborum alias nam?
+            a.btn(href="#") read more 
+            .icons 
+               a(href="#")
+                  i.fas.fa-book 
+                  | 5 modules 
+               a(href="#")
+                  i.fas.fa-clock 
+                  | 6 hours
+               
+
+      section#courese.courese 
+         +Heading({span:"our courses"})
+         .box-container 
+            +CourseBox({src:"../assets/Glassmorphism/course-1.svg", title:"web designing"})
+            +CourseBox({src:"../assets/Glassmorphism/course-2.svg", title:"ceo marketing"})
+            +CourseBox({src:"../assets/Glassmorphism/course-3.svg", title:"science and technology"})
+            +CourseBox({src:"../assets/Glassmorphism/course-4.svg", title:"music and dancing"})
+            +CourseBox({src:"../assets/Glassmorphism/course-5.svg", title:"teching and staff"})
+            +CourseBox({src:"../assets/Glassmorphism/course-6.svg", title:"graphic designing"})
+
+      //-===========================
+      //- 티쳐영역
+      section#teachers.teachers 
+      //- 플랜영역
+      section#plan.plan 
+      //- 리뷰영역
+      section#review.review 
+      //- 컨텐츠영역
+      section#contact.contact 
+
+      //- 푸터영역
+      footer.footer 
+
+            

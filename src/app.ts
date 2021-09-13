@@ -25,6 +25,7 @@ app.get("/MarketO", (req, res) => { res.render("MarketO"); });
 app.get("/Controls", (req, res) => { res.render("Controls"); });
 app.get("/Restaurant", (req, res) => { res.render("Restaurant"); });
 app.get("/PortPolio", (req, res) => { res.render("PortPolio"); });
+app.get("/Glassmorphism", (req, res) => { res.render("Glassmorphism"); });
 
 
 app.listen(PORT, function () {
