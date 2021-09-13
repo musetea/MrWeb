@@ -6,20 +6,224 @@ html(lang="ko")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
       title Restaurant
       link(rel="stylesheet", href="../css/Restaurant.css")
+      link(rel="stylesheet", href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
       script(src="../js/Restaurant.js" defer) 
+      script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js" defer)
+
    body 
+      mixin Heading(i)
+         h3.sub-heading=i.sub 
+         h1.heading=i.title 
+
+      mixin Stars(i)
+         .stars
+            each star in i.full 
+               i(class=star)
+            each half in i.half 
+               i(class=half)
+      mixin SearchForm()
+         form#search-form(action="")
+            input#search-box(type="search", placehodler="search here...")
+            label.fas.fa-search(for="search-box")   
+            i.fas.fa-times#close 
       header.header 
-         a.logo(href="") 
-            i.fas.fa-untensils
-            | resto. 
+         a.logo(href="#") 
+            i.fas.fa-utensils
+            | resto 
          nav.navbar 
-            a(href="#home")  home
+            a.active(href="#home")  home
             a(href="#dishes") dishes
             a(href="#about") about
             a(href="#menu") menu
             a(href="#review") review
             a(href="#order") order
          .icons 
-            i.fas.fa-menu-bars 
-            i.fas.fa-menu-bars 
-            i.fas.fa-menu-bars 
+            i.fas.fa-bars#menu-bars 
+            i.fas.fa-search#search-icon 
+            a.fas.fa-heart(href="#") 
+            a.fas.fa-shopping-cart(href="#") 
+      
+      +SearchForm()
+
+      //- HOME SECTION
+      mixin SlideBox(i)
+         .slide.swiper-slide 
+            .content 
+               span=i.caption 
+               h3=i.title
+               p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt quae exercitationem sequi quas, reiciendis molestiae.
+               a.btn(href="") order now
+            .image 
+               img(src=i.src, alt="")
+
+      section#home.home 
+         .home-slider.swiper-container 
+            .wrapper.swiper-wrapper
+               +SlideBox({src:"../assets/Restaurant/home-img-1.png", caption:"our special dish", title:"spicy noodles" })
+               +SlideBox({src:"../assets/Restaurant/home-img-2.png", caption:"our special dish", title:"fried chicken" })
+               +SlideBox({src:"../assets/Restaurant/home-img-3.png", caption:"our special dish", title:"hot pizza" })
+            
+            .swiper-pagination
+
+      //- DISHES SECTION
+      mixin DishesItem(i)
+         .box
+            .icons 
+               a.fas.fa-heart(href="#") 
+               a.fas.fa-eye(href="#")
+            img(src=i.src, alt="")
+            h3= i.title 
+            +Stars({full:["fas fa-star","fas fa-star","fas fa-star","fas fa-star"],
+               half:["fas fa-star-half-alt"]
+               })
+            span.price=i.price 
+            a.bnt(href="#") add to cart 
+
+      section#dishes.dishes 
+         h3.sub-heading our dishes 
+         h1.heading popular dishes 
+
+         .box-container 
+            +DishesItem({src:"../assets/Restaurant/dish-1.png", title:"", price:"$15.99" })
+
+      //- 어바우트 섹션 
+      mixin IconBox(i)
+         .icons
+            i(class=i.icon)
+            span= i.title 
+
+      section#about.about 
+         +Heading({sub:"about us", title:"why choose us?"})
+      
+         .row 
+            .image 
+               img(src="../assets/Restaurant/about-img.png", alt="")
+            .content 
+               h3 best food in the country 
+               p Lorem ipsum, dolor sit amet consectetur adipisicing elit. In accusantium recusandae optio unde iste explicabo ipsa non eius repellat quia, assumenda fugiat blanditiis enim deserunt dolorem. Odit non commodi illo?
+               p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure possimus atque at eos consequuntur quis, eum praesentium? Quisquam, dolores eos?
+
+               .icons-container 
+                  +IconBox({icon:"fas fa-shipping-fast", title:"free delivery"})
+                  +IconBox({icon:"fas fa-dollar-sign", title:"easy payments"})
+                  +IconBox({icon:"fas fa-headset", title:"services"})
+               a.btn(href="") learn more 
+
+      //- 메뉴섹션
+      mixin MenuItemBox(i)
+         .box 
+            .image 
+               img(src=i.src, alt="")
+               a.fas.fa-heart(href="#")
+            .content 
+               +Stars({full:["fas fa-star","fas fa-star","fas fa-star","fas fa-star"],
+                  half:["fas fa-star-half-alt"]})
+               h3= i.title 
+               p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam beatae consequuntur debitis id laborum exercitationem?
+               a.btn(href="#") add to cart 
+               span.price=i.price 
+
+
+      section#menu.menu 
+         +Heading({sub:"our menu", title:"today's speciality"})
+         
+         .box-container 
+            +MenuItemBox({src:"../assets/Restaurant/menu-1.jpg", title:"delicious food", price:"$12.99"})
+            +MenuItemBox({src:"../assets/Restaurant/menu-2.jpg", title:"delicious food", price:"$12.99"})
+            +MenuItemBox({src:"../assets/Restaurant/menu-3.jpg", title:"delicious food", price:"$12.99"})
+            +MenuItemBox({src:"../assets/Restaurant/menu-4.jpg", title:"delicious food", price:"$12.99"})
+            +MenuItemBox({src:"../assets/Restaurant/menu-5.jpg", title:"delicious food", price:"$12.99"})
+            +MenuItemBox({src:"../assets/Restaurant/menu-6.jpg", title:"delicious food", price:"$12.99"})
+            +MenuItemBox({src:"../assets/Restaurant/menu-7.jpg", title:"delicious food", price:"$12.99"})
+            +MenuItemBox({src:"../assets/Restaurant/menu-8.jpg", title:"delicious food", price:"$12.99"})
+            +MenuItemBox({src:"../assets/Restaurant/menu-9.jpg", title:"delicious food", price:"$12.99"})
+
+      //- 리뷰섹션
+      mixin ReviewBox(i)
+         .slide.swiper-slide 
+            i.mark.fas.fa-quote-right
+            .user 
+               img(src=i.src, alt="")
+               .user-info 
+                  h3= i.name 
+                  +Stars({full:["fas fa-star","fas fa-star","fas fa-star"], half:["fas fa-star-half-alt"]})
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolores rerum labore, placeat mollitia quae sit aliquam aut delectus odit. Vero quasi aperiam commodi veritatis quam officiis officia alias repellat.
+
+      
+      section#review.review 
+         +Heading({sub:"customer's review", title:"what they say"})
+
+         //- 리뷰슬라이더 
+         .review-slider.swiper-container 
+            .wrapper.swiper-wrapper  
+               +ReviewBox({src:"../assets/Restaurant/pic-1.png", name:"Jhone Doe", })
+               +ReviewBox({src:"../assets/Restaurant/pic-2.png", name:"Emma Hill", })
+               +ReviewBox({src:"../assets/Restaurant/pic-3.png", name:"홍길동", })
+               +ReviewBox({src:"../assets/Restaurant/pic-4.png", name:"Jullia Robort", })
+
+      //- ORDER SECTION
+      section#order.order 
+         +Heading({sub:"order now", title:"free and fast"})
+
+         form(action="")
+            .inputBox 
+               .input 
+                  span your name 
+                  input(type="text" , placehodler="enter your name") 
+               .input 
+                  span your number
+                  input(type="number" , placehodler="enter your number") 
+            .inputBox 
+               .input 
+                  span your order
+                  input(type="text" , placehodler="enter your food") 
+               .input 
+                  span your number
+                  input(type="text" , placehodler="extra with food") 
+            .inputBox 
+               .input 
+                  span how musch
+                  input(type="number" , placehodler="how many orders") 
+               .input 
+                  span date and time
+                  input(type="datetime-local")
+            .inputBox 
+               .input 
+                  span your address
+                  textarea(name="", cols="30", rows="10", placehodler="enter your address") 
+               .input 
+                  span your message
+                  textarea(name="", cols="30", rows="10", placehodler="enter your message") 
+            
+            input.btn(type="submit", value="order now")
+
+      //- 푸터섹션
+      mixin FooterBox(i)
+         .box 
+            h3=i.title 
+            each link in i.links
+               a(href=link.src)= link.title 
+               
+      footer.footer 
+         .box-container 
+            - var locations = [{src:"#",title:"india"},{src:"#",title:"korea"} ,{src:"#",title:"russia"},{src:"#",title:"USA"},{src:"#",title:"france"}]
+            +FooterBox({title:"locations", links:locations})
+            - 
+               var quickLinks = [{src:"#home",title:"home"},{src:"#dishes",title: "dishes"},{src:"#about",title: "about"},
+                  {src:"#menu",title:"menu"}, {src:"#review",title:"review"}, {src:"#order",title:"order"}]
+            +FooterBox({title:"quick links", links:quickLinks})
+            - 
+               var contentInfo = [{src:"#",title:"+123-4567-9018"},{src:"#",title:"+012-2563-9856-5678"},
+                  {src:"#",title:"shaikhanas@gmail.com"},{src:"#",title:"anashbiai@naver.com"},{src:"#",title:"mumbai, india - 400410"} ]
+            +FooterBox({title:"content info", links:contentInfo})
+            -
+               var followUs = [{src:"#",title:"facebook"},{src:"#",title:"twitter"},{src:"#",title:"instagram"},{src:"#",title:"linkedin"}]
+            +FooterBox({title:"floow us", links:followUs})
+
+         .createBy copyrights @ 2021 by 
+            span mr.web 
+            |designer
+
+      //- 로딩
+      .loader-container 
+         img(src="../assets/Restaurant/loader.gif", alt="")
