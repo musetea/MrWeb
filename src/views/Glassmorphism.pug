@@ -60,9 +60,53 @@ html(lang="en")
 
       //-===========================
       //- 티쳐영역
+      mixin Share()
+         .share
+            a.fab.fa-facebook-f(href="#") 
+            a.fab.fa-twitter(href="#") 
+            a.fab.fa-instagram(href="#") 
+            a.fab.fa-linkedin(href="#") 
+
+      mixin TeacherBox(i)
+         .box 
+            img(src=i.src, alt="")
+            h3=i.name 
+            span= i.desc 
+            +Share()
+
+
       section#teachers.teachers 
+         +Heading({span:"our teachers"})
+         .box-container 
+            +TeacherBox({src:"../assets/Glassmorphism/teacher-1.png", name:"영영이", desc:"online teacher"})
+            +TeacherBox({src:"../assets/Glassmorphism/teacher-2.png", name:"김한심", desc:"online teacher"})
+            +TeacherBox({src:"../assets/Glassmorphism/teacher-3.png", name:"심순이", desc:"online teacher"})
+            +TeacherBox({src:"../assets/Glassmorphism/teacher-4.png", name:"강아지", desc:"online teacher"})
+            +TeacherBox({src:"../assets/Glassmorphism/teacher-5.png", name:"조치지", desc:"online teacher"})
+            +TeacherBox({src:"../assets/Glassmorphism/teacher-6.png", name:"만취지", desc:"online teacher"})
+
+
+      mixin Price(price)
+         .price 
+            span $
+            = price 
+            span /mo
       //- 플랜영역
+      mixin PlanBox(i)
+         .box 
+            i(class=i.icon)
+            h3=i.course 
+            ul 
+               each course in i.courses   
+                  li= course 
+            a(href="#") choose plan 
+            +Price(i.price)
+
       section#plan.plan 
+         .box-container 
+            +PlanBox({icon:"fas fa-paper-plane", course:"basic plan", courses:["full courses", "projects","certification","job placements","24/7 support"],price:30})
+            +PlanBox({icon:"fas fa-plane", course:"standard plan", courses:["full courses", "projects","certification","job placements","24/7 support"],price:60})
+            +PlanBox({icon:"fas fa-rocket", course:"premium plan", courses:["full courses", "projects","certification","job placements","24/7 support"],price:90})
       //- 리뷰영역
       section#review.review 
       //- 컨텐츠영역

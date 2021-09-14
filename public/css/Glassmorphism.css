@@ -290,6 +290,147 @@ h3 {
   padding-right: .5rem;
 }
 
+.teachers .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.teachers .box {
+  padding: 2rem;
+  text-align: center;
+  border: 0.1rem solid rgba(255, 255, 255, 0.1);
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.3);
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(0.4rem);
+          backdrop-filter: blur(0.4rem);
+}
+
+.teachers .box img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.teachers .box h3 {
+  font-size: 2.2rem;
+  padding: .5rem 0;
+}
+
+.teachers .box span {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.teachers .box .share {
+  padding-top: 1rem;
+}
+
+.teachers .box .share a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  margin: .5rem;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.teachers .box .share a:hover {
+  background-color: #130f40;
+}
+
+.plan .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(27rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 1.5rem;
+}
+
+.plan .box {
+  padding: 2rem;
+  text-align: center;
+  border: 0.1rem solid rgba(255, 255, 255, 0.1);
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.3);
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(0.4rem);
+          backdrop-filter: blur(0.4rem);
+}
+
+.plan .box i {
+  font-size: 7rem;
+  padding: 1rem 0;
+  color: #fff;
+}
+
+.plan .box i.fa-plane {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.plan .box h3 {
+  margin: 1rem 0;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #130f40;
+}
+
+.plan .box ul {
+  padding: 1rem 0;
+}
+
+.plan .box ul li {
+  padding: 1rem 0;
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.plan .box a {
+  display: block;
+  margin: 1rem 0;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #130f40;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.plan .box a:hover {
+  letter-spacing: .1;
+}
+
+.plan .box .price {
+  padding-top: 1rem;
+  font-size: 6rem;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.plan .box .price span {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
 @media (max-width: 991px) {
   html {
     font-size: 55%;
