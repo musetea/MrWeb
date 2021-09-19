@@ -1,0 +1,167 @@
+@import "def";
+@use "./mixin";
+
+$orange:#ff7800;
+$black:#130f40;
+$light:#666;
+$white:#fff;
+$shadow:0 .5rem 1rem rgba(0,0,0, .1);
+$border:.2rem solid rgba(0,0,0, .1);
+$outline:.1rem solid rgba(0,0,0, .1);
+$outline-hover:.2rem solid $black;
+$radius: .5rem;
+
+
+
+html{
+    font-family: "Poppins", sans-serif;
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body{
+    background-color: #eee;
+}
+
+// 메뉴버튼 감추기 
+#menu-btn{
+    display: none;
+}
+
+// 헤더영역
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+
+    // 
+    padding: 2rem 9%;
+    background-color: $white;
+    box-shadow: $shadow;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // 로그영역
+    .logo{
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color: $black;
+
+        // 로그아이콘 
+        i{
+            color: $orange;
+            margin-right: .25rem;
+        }
+    }
+    // 네비게이션바
+    .navbar{
+        
+        // 메뉴
+        a{
+            margin: 0 1rem;
+            font-size: 1.7rem;
+            color: $black;
+        }
+        a:hover{
+            color: $orange;
+        }
+    }
+
+    // 아이콘
+    .icons {
+
+        .icon{
+            height: 4.5rem;
+            width: 4.5rem;
+            line-height: 4.5rem;
+
+            margin-right: .3rem;
+            font-size: 2rem;
+            background-color: #eee;
+            color: $black;
+
+            text-align: center;
+            border-radius: $radius;
+            background: #eee;
+
+            cursor: pointer;
+        }
+        .icon:hover,
+        .icon.active{
+            background-color: $orange;
+            color: $white;
+        }
+    }
+
+    // 검색창 
+    #search-form{
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        width: 50rem;
+        height: 4rem;
+        background-color: $white;
+        border-radius: $radius;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        box-shadow: $shadow;
+
+        transition: .5s ease-in-out;
+
+        input{
+            height: 100%;
+            width: 100%;
+
+            font-size: 1.7rem;
+            padding: 0 1.5rem;
+            
+            background: none;
+            color: $black;
+            text-transform: none;
+        }
+
+        label{
+            padding-right: 1.5rem;
+            font-size: 2.2rem;
+            color: $black;
+            cursor: pointer;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+    }
+    #search-form.active{
+        right: 2rem;
+        
+    }
+}
+
+// 미디어쿼리
+
+// 991px
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+}
+// 768px
+@media (max-width:768px){
+    
+}
+// 451px
+@media (max-width:451px){
+    html{
+        font-size: 50%;
+    }
+}
+

@@ -1,0 +1,16 @@
+
+mixin CartBox(i)
+    .box 
+        i.fas.fa-trash 
+        img(src=i.src, alt="")
+        .content 
+            h3=i.title 
+            span.price= i.price 
+            span.quantity= i.quantity
+
+- 
+    var carts = [{src:"../assets/Grocery/cat-1.png", title:"watermelon",price:"$4.99", quantity: "qty : 1"}];
+
+.shopping-cart 
+    each cart in carts 
+        +CartBox(cart)

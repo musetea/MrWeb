@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+   head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title Grocery Store
+      link(rel="stylesheet", href="../css/Grocery.css")
+      script(src="../js/Grocery.js" defer) 
+   include ../mixin 
+
+   //- 헤더
+   header.header 
+      a.logo(href="#") 
+         i.fas.fa-shopping-basket 
+         | groco
+      - var links = ["home","features","products","categories","review","blogs"];
+      +NavigationBar({ links:links})
+      - 
+         var icons=[{icon:"fas fa-bars", id:"menu-btn"},{icon:"fas fa-search", id:"search-btn"},
+            {icon:"fas fa-shopping-cart", id:"cart-btn"},{icon:"fas fa-user", id:"login-btn"}];
+
+      +HeaderIcons({links:icons})
+
+      //- 검색박스
+      include Search 
+      //- 쇼핑카드
+      include ShoppingCart 

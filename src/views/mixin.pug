@@ -50,5 +50,29 @@ mixin stars(i)
       i.fas.fa-star 
       i.fas.fa-star-half-alt
 
-   
+//- 공유아이콘
+mixin Share(i)
+   .share 
+      a.fab.fa-facebook-f(href="#") 
+      a.fab.fa-twitter(href="#") 
+      a.fab.fa-instagram(href="#") 
+      a.fab.fa-linkedin(href="#") 
 
+//- 퀵링크  
+mixin QuickLinks(i)
+   h3=i.title 
+   each link in i.links 
+      a(href=link.href, class=i.class)
+         i(class=i.icon) 
+      = link.caption 
+
+//- 네비게이션 
+mixin NavigationBar(i)
+   nav.navbar 
+      each link in i.links 
+         a(href=`#${link}`)= link 
+
+mixin HeaderIcons(i)
+   .icons 
+      each link in i.links
+         .icon(class=link.icon, id=link.id)

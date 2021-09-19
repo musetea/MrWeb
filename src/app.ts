@@ -26,6 +26,7 @@ app.get("/Controls", (req, res) => { res.render("Controls"); });
 app.get("/Restaurant", (req, res) => { res.render("Restaurant"); });
 app.get("/PortPolio", (req, res) => { res.render("PortPolio"); });
 app.get("/Glassmorphism", (req, res) => { res.render("Glassmorphism"); });
+app.get("/Grocery", (req, res) => { res.render("Grocery/Index"); });
 
 
 app.listen(PORT, function () {
