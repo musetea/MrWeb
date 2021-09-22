@@ -11,6 +11,23 @@ $outline:.1rem solid rgba(0,0,0, .1);
 $outline-hover:.2rem solid $black;
 $radius: .5rem;
 
+// A 태그버튼 
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border: .2rem solid $black;
+    border-radius: $radius;
+    color: $black;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $orange;
+        color: $white;
+    }
+}
+
 
 
 html{
@@ -143,6 +160,111 @@ body{
     #search-form.active{
         right: 2rem;
         
+    }
+
+    // 쇼핑카드
+    .shopping-cart{
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        width: 30rem;
+        padding: 1rem;
+        border-radius: $radius;
+        box-shadow: $shadow;
+        transition: .5s ease-in-out;
+
+        // 
+        .box{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            margin: 1rem 0;
+
+            img{
+                height: 10rem;
+            }
+
+            // 삭제버튼
+            .fa-trash{
+                position: absolute;
+                top: 50%;
+                right: 2rem;
+                font-size: 2rem;
+                cursor: pointer;
+                color: $light;
+                transform: translateY(-50%);
+
+                &:hover{
+                    color: $orange;
+                }
+            }
+            // 컨텐츠
+            .content{
+                h3{
+                    padding-bottom: 1rem;
+                    font-size: 1.7rem;
+                    color: $black;
+                }
+                span{
+                    font-size: 1.6rem;
+                    color: $light;
+                }
+
+                .quantity{
+                    padding-left: 1rem;
+                }
+            }
+        }
+        // TOTAL
+        .total{
+            padding: 1rem 0;
+            font-size: 2.5rem;
+            text-align: center;
+            color: $black;
+        }
+        // 버튼 
+        .btn{
+            display: block;
+            text-align: center;
+            margin: 1rem;
+        }
+    }
+    .shopping-cart.active{
+        right: 2rem;
+    }
+    // 로그인폼 
+    .login-form{
+        position: absolute;
+        top: 110%;
+        right: 2rem;
+        width: 30rem;
+        padding: 2rem;
+        background-color: $white;
+        box-shadow: $shadow;
+        border-radius: $radius;
+        text-align: center;
+
+        h3{
+            font-size: 2.5rem;
+
+        }
+
+        .box{
+            width: 100%;
+            margin: .7rem 0;
+            padding: 1rem;
+            font-size: 1.7rem;
+            background-color: #eee;
+            color: $black;
+            text-transform: none;
+            border-radius: $radius;
+        }
+        p{
+            padding: .5rem 0;
+            font-size: 1.5rem;
+            color: $light;
+        }
     }
 }
 

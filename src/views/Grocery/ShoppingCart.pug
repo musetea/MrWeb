@@ -9,8 +9,12 @@ mixin CartBox(i)
             span.quantity= i.quantity
 
 - 
-    var carts = [{src:"../assets/Grocery/cat-1.png", title:"watermelon",price:"$4.99", quantity: "qty : 1"}];
+    var carts = [{src:"../assets/Grocery/cart-img-1.png", title:"watermelon",price:"$4.99", quantity: "qty : 1"},
+        {src:"../assets/Grocery/cart-img-2.png", title:"onion",price:"$6.99", quantity: "qty : 1"},
+        {src:"../assets/Grocery/cart-img-3.png", title:"chiken",price:"$7.12", quantity: "qty : 1"}];
 
 .shopping-cart 
     each cart in carts 
         +CartBox(cart)
+    .total total : $19.69/ -
+    a.btn(href="") checkout 
