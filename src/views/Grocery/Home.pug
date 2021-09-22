@@ -1,0 +1,24 @@
+section#home.home 
+    .content 
+        h3 fresh and 
+            span organic 
+            | products for your 
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quaerat sapiente tempore id, eius ab!
+        a.btn(href="#") show now 
+
+//- FEATURES
+mixin FeatureBox(i)
+    .box 
+        img(src=i.src, alt="")
+        h3=i.title 
+        p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat iure totam, qui dignissimos iste deleniti.
+        a.btn(href="#") read more 
+
+section#features.features 
+    h1.heading our 
+        span features 
+    
+    .box-container 
+        +FeatureBox({src:"../assets/Grocery/feature-img-1.png", title:"fresh an dorganic"})
+        +FeatureBox({src:"../assets/Grocery/feature-img-2.png", title:"free delivery"})
+        +FeatureBox({src:"../assets/Grocery/feature-img-3.png", title:"easy payments"})

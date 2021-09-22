@@ -27,6 +27,21 @@ $radius: .5rem;
         color: $white;
     }
 }
+.heading{
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    text-align: center;
+    color: $black;
+
+    span{
+        display: inline-block;
+        padding: .5rem 3rem;
+        background-color: $orange;
+        color: $white;
+        clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+    }
+}
 
 
 
@@ -36,10 +51,17 @@ html{
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 7rem;
+
+    
 }
 
 body{
     background-color: #eee;
+}
+
+// 섹션
+section{
+    padding: 2rem 9%;
 }
 
 // 메뉴버튼 감추기 
@@ -234,16 +256,17 @@ body{
         right: 2rem;
     }
     // 로그인폼 
-    .login-form{
+    #login-form{
         position: absolute;
         top: 110%;
-        right: 2rem;
+        right: -110%;
         width: 30rem;
         padding: 2rem;
         background-color: $white;
         box-shadow: $shadow;
         border-radius: $radius;
         text-align: center;
+        transition: .5s ease-in-out;
 
         h3{
             font-size: 2.5rem;
@@ -266,7 +289,55 @@ body{
             color: $light;
         }
     }
+    #login-form.active{
+        right: 2rem;
+    }
+
 }
+
+// 홈화면
+.home{
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+    background: url(../assets/Grocery/banner-bg.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // 컨텐츠
+    .content{
+        width: 60rem;
+        text-align: center;
+    }
+
+    h3{
+        font-size: 3rem;
+        color: $black;
+
+        span{
+            color: $orange;
+        }
+    }
+    p{
+        padding: 1rem;
+        font-size: 1.7rem;
+        line-height: 1.8;
+        color: $light;
+    }
+}
+
+// FEATURES
+.features {
+
+    .box-container{
+
+        @include GridView(30rem, 1.5rem);
+    }
+}
+
 
 // 미디어쿼리
 
@@ -279,9 +350,42 @@ body{
 // 768px
 @media (max-width:768px){
     
+    section{
+        padding: 2rem;
+    }
+
+    #menu-btn{
+        display: inline-block;
+    }
+    // 네비게션바 
+    .header{
+        .navbar{
+            position: absolute;
+            top: 110%;
+            right: -110%;
+            width: 30rem;
+            background-color: $white;
+            box-shadow: $shadow;
+            border-radius: $radius;
+            transition: .5s ease-in-out;
+            a{
+                display: block;
+                margin: 2rem 2.5rem;
+                font-size: 2rem;
+            }
+        }
+        .navbar.active{
+            right: 2rem;
+        }
+    }
 }
 // 451px
 @media (max-width:451px){
+
+    .heading{
+        font-size: 2.5rem;
+    }
+
     html{
         font-size: 50%;
     }

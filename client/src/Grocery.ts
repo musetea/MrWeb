@@ -1,6 +1,8 @@
 class Grocery {
     private $searchForm: SearchForm;
     private $shoppingCart: ShoppingCart;
+    private $loginForm: LoginForm;
+    private $naviGation: NavigationBar;
 
     constructor() {
 
@@ -11,8 +13,32 @@ class Grocery {
         this.$shoppingCart = new ShoppingCart(_cart);
 
         const _loginForm = document.querySelector("#login-form")! as HTMLFormElement;
+        this.$loginForm = new LoginForm(_loginForm);
+
+        // 네비게이션바 
+        const _navBar = document.querySelector(".header nav.navbar")! as HTMLElement;
+        this.$naviGation = new NavigationBar(_navBar);
     }
 };
+
+// 네비게이션바 (메뉴바)
+class NavigationBar {
+    private $btn: HTMLDivElement;
+    constructor(private _navBar: HTMLElement) {
+        this.$btn = document.querySelector("#menu-btn")! as HTMLDivElement;
+        this.$btn.addEventListener("click", this.OnMenuClick);
+    }
+
+    private OnMenuClick = () => {
+        this._navBar.classList.toggle("active");
+        this.$btn.classList.toggle("active");
+    };
+
+    onscroll = () => {
+        this._navBar.classList.remove("active");
+        this.$btn.classList.remove("active");
+    }
+}
 
 class SearchForm {
     private $btn: HTMLDivElement;
@@ -58,13 +84,22 @@ class LoginForm {
     constructor(private _form: HTMLFormElement) {
         this.$btn = document.querySelector("#login-btn")! as HTMLDivElement;
         this.$btn.addEventListener("click", this.onLoginClick);
-
+        console.log(this.$btn, this._form);
     }
     private onLoginClick = () => {
         this._form.classList.toggle("active");
         this.$btn.classList.toggle("active");
+        console.log("login click");
     }
-}
+
+    onscroll = () => {
+        this._form.classList.remove("active");
+        this.$btn.classList.remove("active");
+    }
+
+};
+
+
 
 
 new Grocery();
