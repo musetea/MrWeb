@@ -1,0 +1,21 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "es6",
+  "scripts": {
+    "prestart": "tsc",
+    "dev": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.55.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "swiper": "^7.0.7"
+  }
+}

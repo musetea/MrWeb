@@ -1,0 +1,21 @@
+header 
+    .header-1 
+        a.log(href="/")
+            i.fas.fa-book 
+            | bookly 
+        
+        form.serch-form(action="search-book", method="post")
+            input#search-box(type="search", placeholder="search here...")
+            label.fas.fa-search(for="search-box")
+        //- 
+        .icons 
+            #search-btn.fas.fa-search 
+            a.fas.fa-heart(href="#")
+            a.fas.fa-shopping-cart(href="#")
+            #login-btn.fas.fa-user 
+    //- 헤더2
+    .header-2 
+        nav.navbar 
+            each menu in menus 
+                a(href=`#${menu.id}`)= menu.id 
+                

@@ -1,3 +1,4 @@
+import Swiper from 'swiper';
 
 class Restaurant {
    private $Loader: HTMLDivElement;
@@ -27,7 +28,7 @@ class Restaurant {
       const swiper = new Swiper('.home-slider', {
          // Optional parameters
          spaceBetween: 30,
-         centerSlides: true,
+         // centerSlides: true,
          loop: true,
 
          autoplay: {

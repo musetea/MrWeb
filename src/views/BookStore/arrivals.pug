@@ -1,0 +1,35 @@
+
+mixin Stars(stars)
+    .stars 
+        each star in stars 
+            i(class=star)
+        
+mixin ArriveBox(i)
+    a.box.swiper-slide(href="#")
+        .image 
+            img(src=i.src, alt="")
+        .content 
+            h3= i.title 
+            .price= i.price 
+                span=i.price2 
+            +Stars(i.stars) 
+
+- var stars = ["fas fa-star","fas fa-star","fas fa-star","fas fa-star","fas fa-star-half-alt"];
+
+section#arrivals.arrivals 
+    h1.heading 
+        span new arrivals 
+    .arrivals-slider.swiper 
+        .wrapper.swiper-wrapper 
+            +ArriveBox({src:"../assets/BookStore/book-1.png", title:"The Art City", price:"15.99", price2:"20.99", stars:stars})
+            +ArriveBox({src:"../assets/BookStore/book-2.png", title:"Thanks in Everything", price:"", price2:"", stars:stars})
+            +ArriveBox({src:"../assets/BookStore/book-3.png", title:"your name", price:"", price2:"", stars:stars})
+            +ArriveBox({src:"../assets/BookStore/book-4.png", title:"your title goes here", price:"", price2:"", stars:stars})
+            +ArriveBox({src:"../assets/BookStore/book-5.png", title:"music rock", price:"", price2:"", stars:stars})
+    .arrivals-slider.swiper  
+        .wrapper.swiper-wrapper  
+            +ArriveBox({src:"../assets/BookStore/book-6.png", title:"sample text", price:"15.99", price2:"20.99", stars:stars})
+            +ArriveBox({src:"../assets/BookStore/book-7.png", title:"webpack", price:"", price2:"", stars:stars})
+            +ArriveBox({src:"../assets/BookStore/book-8.png", title:"", price:"", price2:"", stars:stars})
+            +ArriveBox({src:"../assets/BookStore/book-9.png", title:"", price:"", price2:"", stars:stars})
+            +ArriveBox({src:"../assets/BookStore/book-10.png", title:"Retro", price:"", price2:"", stars:stars})

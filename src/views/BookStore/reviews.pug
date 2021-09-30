@@ -1,0 +1,20 @@
+mixin ReviewBox(i)
+    .box.swiper-slide 
+        img(src=i.src, alt="")
+        h3=i.name 
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde illum facere explicabo culpa ipsam, sapiente placeat, minima accusantium repudiandae qui, hic iusto repellat. Dolorum esse suscipit, eum quo tenetur optio!
+        +Stars(i.stars)
+    
+
+
+section#reviews.reviews 
+    h1.heading client's reviews 
+
+    .reviews-slider.swiper 
+        .swiper-wrapper 
+            +ReviewBox({src:"../assets/BookStore/pic-1.png", name:"jone doe", stars:stars})
+            +ReviewBox({src:"../assets/BookStore/pic-2.png", name:"jone doe", stars:stars})
+            +ReviewBox({src:"../assets/BookStore/pic-3.png", name:"jone doe", stars:stars})
+            +ReviewBox({src:"../assets/BookStore/pic-4.png", name:"jone doe", stars:stars})
+            +ReviewBox({src:"../assets/BookStore/pic-5.png", name:"jone doe", stars:stars})
+            +ReviewBox({src:"../assets/BookStore/pic-6.png", name:"jone doe", stars:stars})

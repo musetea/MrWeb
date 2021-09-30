@@ -1,4 +1,4 @@
-"use strict";
+import Swiper from 'swiper';
 class Restaurant {
     constructor() {
         this.SerchMenuClick = () => {
@@ -36,7 +36,7 @@ class Restaurant {
         const swiper = new Swiper('.home-slider', {
             // Optional parameters
             spaceBetween: 30,
-            centerSlides: true,
+            // centerSlides: true,
             loop: true,
             autoplay: {
                 delay: 7500,

@@ -1,0 +1,31 @@
+mixin FeatureBox(i)
+    .box.swiper-slide 
+        .icons 
+            a.fas.fa-search(href="#") 
+            a.fas.fa-heart(href="#") 
+            a.fas.fa-eye(href="#")
+        .image 
+            img(src=i.src, alt="")
+        .content 
+            h3= i.title 
+            .price= i.price 
+                span= i.price2 
+            a.btn(href="#") add to cart 
+
+section#featured.featured 
+    h1.heading 
+        span featured books 
+
+    //- 슬라이드
+    .featured-slider 
+        .wrapper 
+            +FeatureBox({src:"../assets/BookStore/book-1.png", title:"", price:"", price2:"" })
+            +FeatureBox({src:"../assets/BookStore/book-2.png", title:"", price:"", price2:"" })
+            +FeatureBox({src:"../assets/BookStore/book-3.png", title:"", price:"", price2:"" })
+            +FeatureBox({src:"../assets/BookStore/book-4.png", title:"", price:"", price2:"" })
+            +FeatureBox({src:"../assets/BookStore/book-5.png", title:"", price:"", price2:"" })
+            +FeatureBox({src:"../assets/BookStore/book-6.png", title:"", price:"", price2:"" })
+            +FeatureBox({src:"../assets/BookStore/book-7.png", title:"", price:"", price2:"" })
+            +FeatureBox({src:"../assets/BookStore/book-8.png", title:"", price:"", price2:"" })
+            +FeatureBox({src:"../assets/BookStore/book-9.png", title:"", price:"", price2:"" })
+            +FeatureBox({src:"../assets/BookStore/book-10.png", title:"", price:"", price2:"" })

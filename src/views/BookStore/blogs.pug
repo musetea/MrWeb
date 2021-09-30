@@ -1,0 +1,22 @@
+
+mixin BlogBox(i)
+    .box.swiper-slide 
+        .image 
+            img(src=i.src, alt="")
+        .content 
+            h3=i.title 
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor temporibus, voluptatum totam eum nihil autem.
+            a.btn(href="#") read more
+
+section#blogs.blogs 
+    h1.heading 
+        span our blogs 
+    
+    //- 
+    .blogs-slider.swiper 
+        .wrapper.swiper-wrapper 
+            +BlogBox({src:"../assets/BookStore/blog-1.jpg", title:"blog title 01"})
+            +BlogBox({src:"../assets/BookStore/blog-2.jpg", title:"blog title 02"})
+            +BlogBox({src:"../assets/BookStore/blog-3.jpg", title:"blog title 03"})
+            +BlogBox({src:"../assets/BookStore/blog-4.jpg", title:"blog title 04"})
+            +BlogBox({src:"../assets/BookStore/blog-5.jpg", title:"blog title 05"})

@@ -1,0 +1,15 @@
+.login-form-container 
+    form(action="/login")
+        h3 sign in 
+        span username 
+        input#email.box(type="email", name="", placeholder="enter your email")
+        span password 
+        input#password.box(type="password", placeholder="enter youre password")
+        .checkbox 
+            input#remember-me(type="checkbox", name="")
+            label(for="remember-me") remeber me 
+        input.btn(type="submit", value="sign in")
+        p forget password ? 
+            a(href="/password") click here 
+        p don't have an accout ?
+            a(href="/join-in") create one   

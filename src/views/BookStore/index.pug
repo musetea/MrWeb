@@ -1,0 +1,52 @@
+html(lang="ko")
+   head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      title Online Book Store
+      link(rel="stylesheet", href="../css/BookStore.css")
+      script(src="../js/BookStore.js" defer) 
+   body 
+      include header 
+      nav.bottom-navbar 
+         each menu in menus 
+            a(href=`#${menu.id}`, class=menu.cls)= menu.id 
+      //- 로그인
+      include login 
+
+      //- 홈화면
+      include home 
+
+      //- 아이콘 컨테이너 
+      include icons 
+      //- FEATURED
+      include featured 
+      //- 뉴스레터
+      section.newsletter 
+         form(action="/newletter")
+            h3 subscribe for latest updates 
+            input#news-email.box(type="email", name="", placeholder="enter your email") 
+            input.btn(type="submit", value="subscribe")
+
+      //- ARRIVALS
+      include arrivals 
+
+      //- Deal
+      section.deal 
+         .content 
+            h3 deal of the day 
+            h1 upto 50% off 
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quisquam, inventore accusantium laboriosam culpa sit modi quae similique unde laudantium error qui nesciunt. Quos totam, harum beatae sed adipisci distinctio.
+            a.btn(href="#") shop now 
+         .image 
+            img(src="../assets/BookStore/deal-img.jpg", alt="")
+
+      //- 리뷰섹션
+      include reviews 
+      //- 블로그 섹션
+      include blogs 
+      
+
+
+
+

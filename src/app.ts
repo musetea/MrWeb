@@ -28,6 +28,11 @@ app.get("/PortPolio", (req, res) => { res.render("PortPolio"); });
 app.get("/Glassmorphism", (req, res) => { res.render("Glassmorphism"); });
 app.get("/Grocery", (req, res) => { res.render("Grocery/Index"); });
 
+const menus = [{ id: "home", cls: "fas fa-home" }, { id: "featured", cls: "fas fa-list" },
+{ id: "arrivals", cls: "fas fa-tags" }, { id: "reviews", cls: "fas fa-comments" },
+{ id: "blogs", cls: "fas fa-blogs" }];
+app.get("/BookStore", (req, res) => { res.render("BookStore/Index", { menus: menus }); });
+
 
 app.listen(PORT, function () {
    console.log("");
