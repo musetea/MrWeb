@@ -3,6 +3,12 @@ const swiper = new Swiper('.books-slider', {
     // Optional parameters
     direction: 'vertical',
     loop: true,
+    centeredSlides: true,
+    spaceBetween: 10,
+    autoplay: {
+        delay: 9500,
+        disableOnInteraction: false,
+    },
     breakpoints: {
         0: {
             slidesPerView: 1,

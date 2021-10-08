@@ -1,0 +1,18 @@
+.themes-container 
+    //- 닫기버튼 
+    .fas.fa-times#theme-close
+
+    //- 
+    h3 switch theme 
+    .theme-toggler 
+        span light 
+        span.toggler 
+        span dark 
+    
+    //- 
+    h3 pick a colors 
+    .theme-colors 
+        each color in themeColors 
+            .color(style=`background-color:${color};`)
+    
+

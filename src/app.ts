@@ -32,6 +32,8 @@ const menus = [{ id: "home", cls: "fas fa-home" }, { id: "featured", cls: "fas f
 { id: "arrivals", cls: "fas fa-tags" }, { id: "reviews", cls: "fas fa-comments" },
 { id: "blogs", cls: "fas fa-blogs" }];
 app.get("/BookStore", (req, res) => { res.render("BookStore/Index", { menus: menus }); });
+const themeColors = ["#2980b9", "#27ae60", "#ffa512", "#8e44ad", "#0fb9b1", "#ffd32a", "#ff0033", "#e84393"];
+app.get("/ColorSwitcher", (req, res) => { res.render("ColorSwitcher/Index", { themeColors: themeColors }); });
 
 
 app.listen(PORT, function () {

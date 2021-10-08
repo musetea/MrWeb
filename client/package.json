@@ -6,7 +6,7 @@
   "module": "es6",
   "scripts": {
     "prestart": "tsc",
-    "dev": "webpack"
+    "dev": "tsc && webpack"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,55 @@
+
+mixin Locations(i)
+    .box 
+        h3 our locations 
+        each loc in i.locations 
+            a(href="")
+                i.fas.fa-map-marker-alt 
+                = loc 
+mixin QuickLinks(i)
+    .box 
+        h3 quick links 
+        each menu in menus 
+            a(href=`#${menu.id}`)
+                i.fas.fa-arrow-right 
+                = menu.id 
+mixin FooterBox(i)
+    .box 
+        h3=i.title 
+        each link in i.links 
+            a(href="") 
+                i.fas.fa-arrow-left 
+                =link 
+mixin Link(i)
+    a(href="")
+        i(class=i.cls)
+        = i.desc 
+        
+
+footer.footer 
+    .box-container 
+        - var locations = ["india", "USA", "russia", "france", "japan", "africa"];
+        +Locations({locations:locations})
+        +QuickLinks()
+        - var extras=["account info", "ordered items","privacy policy","payment method", "our services"];
+        +FooterBox({title:"extra links", links:extras})
+
+        .box 
+            h3 contact info 
+            a(href="#")
+                i.fas.fa-phone 
+                | +123-456-7890
+            +Link({cls:"fas fa-phone", desc:"+111-222-333"})
+            +Link({cls:"fas fa-envelope", desc:"shaikhanas@gmail.com"})
+            img.map(src="../assets/BookStore/worldmap.png", alt="")
+
+    .share 
+        a.fab.fa-facebook-f(href="") 
+        a.fab.fa-twitter(href="") 
+        a.fab.fa-instagram(href="") 
+        a.fab.fa-linkedin(href="") 
+        a.fab.fa-pinterest(href="") 
+    
+    .credit created by 
+        span mr. web designer 
+        | all rights reserved! 

@@ -4,6 +4,7 @@ module.exports = {
     mode:"development",
     entry: {
         BookStore : './dist/BookStore.js',
+        ColorSwitcher : './dist/ColorSwitcher.js',
         
     },
     output: {

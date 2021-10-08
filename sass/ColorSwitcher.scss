@@ -1,0 +1,167 @@
+@import "def";
+
+// 색상정의 
+$main-color:#2980b9;
+$black-color: #444;
+$light-color:#666;
+$bg-color:#fff;
+$light-bg-color:#eee;
+$border: 1px solid rgba(0,0,0, .1);
+$border-shadow: 0 5px 10px rgba(0,0,0, .1);
+$side-size: 30rem;
+// 
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: $light-bg-color;
+    font-size: 1.7rem;
+}
+body.active{
+    // $black-color: #fff !global;
+    // $bg-color:#262626  !global;
+    // $light-bg-color:#333 !global;
+    // $light-color:#eee !global;
+    // $border: 1px solid rgba(255,255,255, .1) !global;
+    // $border-shadow: 0 5px 10px rgba(0,0,0, .3) !global;
+}
+
+// 테마 사이드바 
+.themes-container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: $side-size;
+    padding: 2rem;
+    text-align: right;
+    background-color: $bg-color;
+    border-left: $border;
+    z-index: 1000;
+
+    // 
+    #theme-close{
+        font-size: 4rem;
+        color: $black-color;
+        cursor: pointer;
+    }
+
+    // 
+    h3{
+        margin: 2rem 0;
+        padding: 1.5rem 0;
+        text-align: center;
+        border-top: $border;
+        border-bottom: $border;
+    }
+    // 
+    .theme-toggler{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span{
+            color: $light-color;
+        }
+
+        .toggler{
+            position: relative;
+            height: 4rem;
+            width: 10rem;
+            margin: 0 1rem;
+            border-radius: 5rem;
+            background-color: $light-bg-color;
+            border: $border;
+            cursor: pointer;
+
+            &::before{
+                content: "";
+                position: absolute;
+                top: .5rem;
+                left: .5rem;
+                height: 2.8rem;
+                width: 2.8rem;
+                border-radius: 50%;
+                background-color: $bg-color;
+                transition: .2s linear;
+            }
+        } 
+    }
+    .theme-toggler.active{
+        .toggler::before{
+            left: 6.5rem;
+        }
+    }
+
+    // 
+    .theme-colors {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+
+        // 
+        .color{
+            height: 5rem;
+            width: 5rem;
+            border-radius: .5rem;
+            cursor: pointer;
+
+            &:hover{
+                opacity: .5;
+            }
+        }
+    }
+}
+
+// 
+.container{
+    margin: 1rem;
+    min-height: 100vh;
+    padding-bottom: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content{
+        width: 40rem;
+        padding: 2rem;
+        border: $border;
+        box-shadow: $border-shadow;
+        border-radius: .5rem;
+        text-align: center;
+
+        img{
+            width: 100%;
+            margin-bottom: 1rem;
+            border-radius: .5rem;
+        }
+
+        h3{
+            font-size: 2.5rem;
+            color: $black-color;
+        }
+        p{
+            padding: 1rem;
+            font-size: 1.5rem;
+            color: $light-color;
+            line-height: 1.8;
+        }
+
+        .btn{
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 1rem 3rem;
+            font-size: 1.7rem;
+            border-radius: .5rem;
+            background-color: $main-color;
+            color: $bg-color;
+
+            &:hover{
+                opacity: .8;
+                letter-spacing: 1;
+            }
+
+        }
+    }
+}
