@@ -1,0 +1,24 @@
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Resturant Food's
+        link(rel="stylesheet", href="../css/Food.css")
+        script(src="../js/Food.js", defer) 
+    body
+        header.header 
+            a.logo(href="#")
+                i.fas.fa-utensils 
+                | food
+            //- 메뉴
+            nav.navbar 
+                each menu in menus 
+                    a(href=`#${menu}`)= menu 
+            //- 아이콘즈
+            .icons 
+                each icon in icons 
+                    div(id=`${icon.id}`, class=icon.class)
+        //- 검색창
+        include ./searchForm 
+            

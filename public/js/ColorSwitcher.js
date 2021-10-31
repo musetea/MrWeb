@@ -16,7 +16,7 @@
   \*******************************/
 /***/ (() => {
 
-eval("\r\nclass ColorSwitcher {\r\n    constructor() {\r\n        const $themeToggler = document.querySelector(\".theme-toggler\");\r\n        $themeToggler.addEventListener(\"click\", (e) => {\r\n            e.preventDefault();\r\n            $themeToggler.classList.toggle(\"active\");\r\n            if ($themeToggler.classList.contains(\"active\")) {\r\n                document.body.classList.add(\"active\");\r\n            }\r\n            else {\r\n                document.body.classList.remove(\"active\");\r\n            }\r\n        });\r\n    }\r\n}\r\n;\r\nnew ColorSwitcher();\r\n\n\n//# sourceURL=webpack://client/./dist/ColorSwitcher.js?");
+eval("\r\nclass ColorSwitcher {\r\n    constructor() {\r\n        const $themeToggler = document.querySelector(\".theme-toggler\");\r\n        $themeToggler.addEventListener(\"click\", (e) => {\r\n            e.preventDefault();\r\n            $themeToggler.classList.toggle(\"active\");\r\n            if ($themeToggler.classList.contains(\"active\")) {\r\n                document.body.classList.add(\"active\");\r\n            }\r\n            else {\r\n                document.body.classList.remove(\"active\");\r\n            }\r\n        });\r\n        const $colors = document.querySelectorAll('.theme-colors .color');\r\n        $colors.forEach(color => {\r\n            const $color = color;\r\n            $color.addEventListener(\"click\", (e) => {\r\n                e.preventDefault();\r\n                let background = $color.style.background;\r\n            });\r\n        });\r\n    }\r\n}\r\n;\r\nnew ColorSwitcher();\r\n\n\n//# sourceURL=webpack://client/./dist/ColorSwitcher.js?");
 
 /***/ })
 

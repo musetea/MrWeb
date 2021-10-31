@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 
 import RealEstate from "./routes/realestate";
+import Food from "./routes/Food";
 
 const app = express();
 const PORT: number = Number(process.env["PORT"]) || 3001;
@@ -34,7 +35,10 @@ const menus = [{ id: "home", cls: "fas fa-home" }, { id: "featured", cls: "fas f
 app.get("/BookStore", (req, res) => { res.render("BookStore/Index", { menus: menus }); });
 const themeColors = ["#2980b9", "#27ae60", "#ffa512", "#8e44ad", "#0fb9b1", "#ffd32a", "#ff0033", "#e84393"];
 app.get("/ColorSwitcher", (req, res) => { res.render("ColorSwitcher/Index", { themeColors: themeColors }); });
+app.get("/ColorSwitcher", (req, res) => { res.render("ColorSwitcher/Index", { themeColors: themeColors }); });
 
+
+app.use("/Food", Food);
 
 app.listen(PORT, function () {
    console.log("");

@@ -12,6 +12,14 @@ class ColorSwitcher {
                 document.body.classList.remove("active");
             }
         });
+        const $colors = document.querySelectorAll('.theme-colors .color');
+        $colors.forEach(color => {
+            const $color = color;
+            $color.addEventListener("click", (e) => {
+                e.preventDefault();
+                let background = $color.style.background;
+            });
+        });
     }
 }
 ;

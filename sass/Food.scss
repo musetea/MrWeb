@@ -1,0 +1,163 @@
+@import "def";
+
+$top : 8.5rem;
+$fz_normal:1.7rem;
+
+$greenColor : #27ae60;
+$blackColor: #130f40;
+$whiteColor: #fff;
+$lightColor: #666;
+$lightBgColor : #f7f7f7;
+$border : .1rem solid rgba(0,0,0, 0.2);
+$boxShadow: 0 1rem 1rem rgba(0,0,0, 0.05);
+
+@mixin grid($val, $gap:1.5){
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: $gap;
+}
+
+// 폰트
+@mixin font($size){
+    font-family: 'Satisfy', cursive;
+    font-size: $size;
+    color: $greenColor;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: $top;
+
+    &::-webkit-scrollbar{
+        width: 1rem;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: $whiteColor;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $greenColor;
+        border-radius: 5rem;
+    }
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+// 헤더영역 
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    padding: 2rem 9%;
+
+    z-index: 1000;
+    background-color: $whiteColor;
+    box-shadow: $boxShadow;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // 로그영역
+    .logo{
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color: $blackColor;
+
+        i{
+            padding-right: 0.5rem;
+            color: $greenColor;
+        }
+    }
+
+    // 네비게이션영역
+    .navbar {
+        a{
+            font-size: 1.7rem;
+            margin: 0 1rem;
+            color: $lightColor;
+
+            &:hover {
+                color: $greenColor;
+            }
+        }
+    }
+    // 아이콘즈
+    .icons{
+        div{
+            height: 5rem;
+            width: 5rem;
+            line-height: 5rem;
+
+            font-size: 2rem;
+            margin-left: .3rem;
+            background-color: $lightBgColor;
+            color: $blackColor;
+            border-radius: .5rem;
+            cursor: pointer;
+            text-align: center;
+
+            &:hover {
+                color: $whiteColor;
+                background-color: $greenColor;
+            }
+        }
+    }
+
+    // 메뉴바
+    #menu-btn{
+        display:  none;
+    }
+
+}
+
+// 검색창
+.search-form-container {
+    position: fixed;
+    top: $top;
+    left: 0;
+    right: 0;
+    height: calc(100vh - $top);
+    background-color: $whiteColor;
+
+    display:  none;
+    &.active{
+        display: block;
+    }
+
+
+    form{
+        height: 7rem;
+        width: 100%;
+        border-bottom: .2rem solid $blackColor;
+
+        display: flex;
+        align-items: center;
+
+        // 검색박스
+        input{
+            height: 100%;
+            width: 100%;
+            font-size: $fz_normal;
+            color: $blackColor;
+            text-transform: none;
+            padding-right: 1rem;
+        }
+
+        label{
+            font-size: 3rem;
+            color: $blackColor;
+            cursor: pointer;
+
+            &:hover {
+                color: $greenColor;
+            }
+        }
+    }
+}
+
