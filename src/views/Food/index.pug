@@ -21,4 +21,17 @@ html(lang="ko")
                     div(id=`${icon.id}`, class=icon.class)
         //- 검색창
         include ./searchForm 
-            
+        //- 쇼핑카트 
+        include ./shoppingCart
+        //- 로그인폼
+        include ./loginForm 
+
+        section.home#home 
+            .content 
+                span welcome foodies 
+                h3 different spices form th different tastes 
+                p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus eius sapiente facere impedit veniam temporibus!
+                a.btn(href="#") order now 
+            .image 
+                img.home-img(src="../assets/Food/home-img.png", alt="")
+                img.home-parallax-img(src="../assets/Food/home-parallax-img.png", alt="")

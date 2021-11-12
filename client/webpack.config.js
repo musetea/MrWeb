@@ -6,6 +6,7 @@ module.exports = {
         BookStore : './dist/BookStore.js',
         ColorSwitcher : './dist/ColorSwitcher.js',
         Food : './dist/Food.js',
+        Travel : './dist/Travel.js',
     },
     output: {
         filename: '[name].js',

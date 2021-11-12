@@ -1,0 +1,35 @@
+mixin cartBox(i) 
+    .box 
+        i.fas.fa-times 
+        img(src=i.src, alt="")
+        .content 
+            h3= i.title 
+            span quantity : 
+            input(type="number", name="", value=`${i.qty}`)
+            <br>
+            span price :
+            span.price= i.price 
+
+
+
+//- 쇼핑카트
+section.shopping-cart-container 
+    .products-container 
+        h3.title your products 
+        .box-container 
+            each cart in carts
+                +cartBox(cart)
+
+    //- 카트총합계
+    .cart-total 
+        h3.title cart total 
+
+        .box
+            h3.subtotal sub total : 
+                span $200
+            h3.total total : 
+                span $200
+
+            a.btn(href="#") proceed to checkout 
+
+        

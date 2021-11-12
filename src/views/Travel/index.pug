@@ -1,0 +1,31 @@
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Travel's in World
+        link(rel="stylesheet", href="../css/Travel.css")
+        script(src="../js/Travel.js", defer) 
+    body
+    
+        //- 헤더영역
+        header.header 
+            //- 메뉴버튼 
+            #menu-btn.fas.fa-bars 
+
+            a.logo(href="#")
+                i.fas.fa-paper-plane 
+                | travel
+            //- 네비게이션 영역 
+            nav.navbar 
+                each menu in menus 
+                    a(href=`#${menu}`)= menu 
+            //- book form
+            a.btn(href="#book-form") book now 
+
+        //- 홈영역
+        include ./home 
+        //- BOOK FORM
+        include ./book-form 
+        
+    

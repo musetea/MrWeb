@@ -3,6 +3,7 @@ import path from "path";
 
 import RealEstate from "./routes/realestate";
 import Food from "./routes/Food";
+import Travel from "./routes/Travel";
 
 const app = express();
 const PORT: number = Number(process.env["PORT"]) || 3001;
@@ -37,8 +38,8 @@ const themeColors = ["#2980b9", "#27ae60", "#ffa512", "#8e44ad", "#0fb9b1", "#ff
 app.get("/ColorSwitcher", (req, res) => { res.render("ColorSwitcher/Index", { themeColors: themeColors }); });
 app.get("/ColorSwitcher", (req, res) => { res.render("ColorSwitcher/Index", { themeColors: themeColors }); });
 
-
 app.use("/Food", Food);
+app.use("/Travel", Travel);
 
 app.listen(PORT, function () {
    console.log("");

@@ -1,0 +1,288 @@
+@import "def";
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    transition: all .3s linear;
+}
+
+$blueColor: #29d9d5;
+$blackColor: #111;
+$wihteColor:#fff;
+$lightColor:#aaa;
+$bgColor:#222;
+$blackBgColor: rgba(17,17,17,.7);
+
+$border : .2rem solid $blueColor;
+
+$fontSizeTitle : 2.5rem;
+$fontSizeNormal: 1.7rem;
+
+// 
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+
+    &::-webkit-scrollbar{
+        width: 1rem;
+    }
+    &::-webkit-scrollbar-track{
+        background: $blackBgColor;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: $blueColor;
+    }
+
+}
+
+section{
+    padding: 3rem 9%;
+}
+
+// 
+body{
+    background: $blackColor;
+    overflow-x: hidden;
+}
+
+// 버튼
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: $fontSizeNormal;
+    color: $blueColor;
+    border: $border;
+    border-radius: 5rem;
+    cursor: pointer;
+    background: none;
+
+    &:hover{
+        background: $blueColor;
+        color: $blackColor;
+    }
+}
+
+// 헤더영역
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    padding: 1.5rem 9%;
+
+    z-index: 1000;
+    background: $bgColor;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // 메뉴영역 
+    .navbar a{
+        margin: 0 1rem;
+        font-size: $fontSizeNormal;
+        color: $lightColor;
+        display: inline-block;
+
+        &:hover{
+            color: $blueColor;
+        }
+    }
+
+    .btn {
+        margin-top: 0;
+    }
+
+}
+// 메뉴버튼 (초기안감춤)
+#menu-btn{
+    font-size: $fontSizeTitle;
+    color: $wihteColor;
+    cursor: pointer;
+    display: none;
+}
+
+
+// 로그영역 
+.logo{
+    font-size: $fontSizeTitle;
+    color: $wihteColor;
+    font-weight: bolder;
+
+    i{
+        padding-right: .5rem;
+        color: $blueColor;
+    }
+}
+
+
+// 홈영역
+.home{
+    margin: 0 auto;
+    margin-top: 9rem;
+    
+    width: 90%;
+    min-height: 80vh;
+    border-radius: 1rem;
+    background: linear-gradient($blackBgColor, $blackBgColor),
+        url(../assets/Travel/home-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-bottom: 5rem;
+
+    .content{
+        text-align: center;
+
+        span{
+            display: block;
+            font-weight: bolder;
+            font-size: 4vw;
+            color: transparent;
+            -webkit-text-stroke: .1rem $wihteColor;
+        }
+
+        h3{
+            font-size: 6vw;
+            color: $wihteColor;
+        }
+
+        p{
+            margin: 1rem auto;
+            max-width: 60rem;
+            font-size: 1.4rem;
+            line-height: 2;
+            color: $lightColor;
+
+
+        }
+    }
+}
+
+// BOOK-FORM 영역
+.book-form{
+    width: 80%;
+    margin: 1rem auto;
+    margin-top: -5rem;
+    padding: 3rem 2rem;
+    background: $bgColor;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(17,17,17,.3);
+
+
+    form{
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        .inputBox{
+            flex: 1 1 25rem;
+
+
+            span{
+                font-size: 1.4rem;
+                color: $lightColor;
+            }
+
+            input{
+                width: 100%;
+                margin-top: 1rem;
+                padding: 1.2rem 1.4rem;
+                font-size: 1.6rem;
+                border: $border;
+                border-radius: 5rem;
+                color: $lightColor;
+                text-transform: none;
+                background: none;
+            }
+        }
+
+        .btn{
+            flex:  1 1 15rem;
+        }
+    }
+}
+
+
+
+
+
+
+// 미디어 쿼리
+// 991
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 1.5rem 2rem;
+    }
+
+    section{
+        padding: 3rem 2rem;
+    }
+
+}
+@media (max-width:768px){
+
+    // 메뉴버튼 (초기안감춤)
+    #menu-btn{
+        display: inline-block;
+    }
+
+    // 헤더
+    .header{
+        .navbar{
+            position: absolute;
+            top: 99%;
+            left: 0;
+            right: 0;
+            background: $bgColor;
+            clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+
+            &.active{
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+            }
+
+            a{
+                display: block;
+                margin: 2rem;
+                font-size: 2rem;
+            }
+        }
+    }
+    // 홈영역
+    .home{
+        margin-top: 10rem;
+
+        .content{
+
+            span{
+                font-size: 8vw;
+            }
+
+            h3{
+                font-size: 9vw;
+            
+            }
+        }
+    }
+}
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}
+
+
+

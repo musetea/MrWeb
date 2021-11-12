@@ -1,0 +1,16 @@
+section#book-form.book-form 
+    form(action="")
+        //- 어디로 
+        .inputBox 
+            span where to?
+            input(type="text", placeholder="place name", value="")
+        //- 언제
+        .inputBox 
+            span when
+            input(type="date",  value="")
+        //- 얼마나
+        .inputBox 
+            span how many?
+            input(type="number", placeholder="number of travelers"  value="")
+
+        input.btn(type="submit", value="find now")
