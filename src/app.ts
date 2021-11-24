@@ -4,6 +4,7 @@ import path from "path";
 import RealEstate from "./routes/realestate";
 import Food from "./routes/Food";
 import Travel from "./routes/Travel";
+import Coffee from "./routes/Coffee";
 
 const app = express();
 const PORT: number = Number(process.env["PORT"]) || 3001;
@@ -40,6 +41,7 @@ app.get("/ColorSwitcher", (req, res) => { res.render("ColorSwitcher/Index", { th
 
 app.use("/Food", Food);
 app.use("/Travel", Travel);
+app.use("/Coffee", Coffee);
 
 app.listen(PORT, function () {
    console.log("");

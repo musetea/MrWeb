@@ -1,0 +1,17 @@
+mixin cartItem(i)
+    .cart-item 
+        span.fas.fa-times 
+        img(src=`${i.image}`, alt="")
+        .content 
+            h3= i.title 
+            .price= i.price 
+
+
+.search-form 
+    input#search-box(type="search", name="", placeholder="search here...")
+    label.fas.fa-search(for="search-box") 
+
+.cart-items-container 
+    each cart in cartItems 
+        +cartItem(cart)
+    a.btn(href="") checkout now 

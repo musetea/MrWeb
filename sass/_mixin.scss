@@ -5,3 +5,10 @@
     grid-template-columns: repeat(auto-fit, minmax($width, 1fr));
     gap: $gap;
 }
+
+// 스크롤바
+@mixin ScrollBar($top) {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: $top;
+}

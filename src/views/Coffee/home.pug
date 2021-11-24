@@ -1,0 +1,158 @@
+
+//- HOME
+sectino.home#home 
+    .content 
+        h3 fresh coffee in the morning 
+        p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum asperiores nesciunt repudiandae quis! Vel, autem?
+        a.btn(href="#") get youre now 
+
+//- ABOUT
+section#about.about 
+    h1.heading 
+        span about 
+        | us 
+    .row 
+        .image 
+            img(src=`${abouts[0]}`, alt="")
+        .content 
+            h3 wahtt makes out coffee special?
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis incidunt ratione, natus consequatur ducimus iusto harum, culpa numquam quam rem sapiente eaque vel voluptas accusantium nulla veritatis. Fugit, eos cumque!
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod cupiditate natus quidem, soluta totam temporibus dignissimos veritatis eos accusamus mollitia.
+            a.btn(href="#") learn more
+
+//- MENU
+mixin menuItem(i)
+    .box 
+        img(src=`${i.image}`, alt=i.title)
+        h3= i.title 
+        div.price= i.price 
+            span= i.max_price 
+        a.btn(href="#") add to cart  
+
+section#menu.menu 
+    h1.heading our 
+        span menu 
+    .box-container 
+        each menu in menus 
+            +menuItem(menu)
+
+
+//- PRODUCTS
+mixin icons()
+    .icons 
+        a.fas.fa-shopping-cart(href="#")
+        a.fas.fa-heart(href="#")
+        a.fas.fa-eye(href="#")
+
+mixin stars(max,min)
+    .stars 
+        - for (var x = 0; x < max; x++)
+            i.fas.fa-star 
+        - for (var x = 0; x < min; x++)
+            i.fas.fa-star-half-alt
+
+mixin price(i, j)
+    .price= i 
+        span= j 
+    
+
+mixin prodcutItem(i)
+    .box 
+        +icons()
+        .image 
+            img(src=`${i.image}`, alt=i.title)
+        .content 
+            h3= i.title 
+            +stars(4,1)
+            +price("$15.99", "  $20.99")
+
+section#products.products 
+    h1.heading our 
+        span products 
+    .box-container 
+        each product in products
+            +prodcutItem(product)
+
+
+//- REVIEW
+mixin reviewItem(i)
+    .box 
+        img.quote(src=`${i.image}`, alt="")
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quis placeat ducimus ipsa dignissimos ut nostrum earum sequi id libero, officia laudantium enim consequatur alias dolore at soluta rerum corrupti.
+        img.user(src=`${i.user}`, alt="")
+        h3= i.name 
+        +stars(4,1)
+
+section#review.review 
+    h1.heading customer's 
+        span review 
+    .box-container 
+        each review in reviews 
+            +reviewItem(review)
+
+//- CONTACT
+mixin inputBox(i)
+    .inputBox 
+        span(class=i.class)
+        input(type=i.type, placeholder=i.title)
+
+section#contact.contact 
+    h1.heading 
+        span contact 
+        | us 
+    .row 
+        iframe.map(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.2843292657685!2d127.04951760086885!3d37.54836442178074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca5d10bf7b4db%3A0x457d51e8b1c3cc16!2z7ZWc6rKw7ZS87JWE7J207JeQ7ZSE!5e0!3m2!1sko!2skr!4v1637726836573!5m2!1sko!2skr", allowfullscreen="", loading="lazy")
+        
+        form(action="")
+            h3 get in touch
+            .inputBox 
+                span.fas.fa-user 
+                input(type="text", name="", placeholder="name") 
+            +inputBox({class:"fas fa-envelope", type:"email", title:"email"})
+            +inputBox({class:"fas fa-phone", type:"number", title:"phone"})
+            input.btn(type="submit", value="contact now")
+
+//- BLOGS
+mixin blogItem(i)
+    .box 
+        .image 
+            img(src=`${i.image}`, alt=i.title)
+        .content 
+            a.title(href="#")= i.title 
+            span= i.datetime 
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quidem similique odit! Delectus, modi nisi.
+            a.btn(href="#") read more 
+
+            
+section#blogs.blogs 
+    h1.heading our 
+        span blogs 
+    .box-container 
+        each blog in blogs 
+            +blogItem(blog)
+//- BLOG'S END 
+
+//- FOOTER START
+mixin share()
+    .share 
+        a.fab.fa-facebook-f(href="#")
+        a.fab.fa-twitter(href="#")
+        a.fab.fa-instagram(href="#")
+        a.fab.fa-linkedin(href="#")
+        a.fab.fa-pinterest(href="#")
+mixin links()
+    .links 
+        each navi in navigations 
+            a(href=`#${navi}`)= navi 
+        
+section.footer 
+    +share()
+    +links()
+    .credit created by 
+        span mr. web desinger 
+        | | all rights reserved   
+
+
+//- FOOTER END
+
+

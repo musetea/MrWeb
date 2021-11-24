@@ -214,6 +214,30 @@ body{
 }
 
 
+// ABOUT
+.about{
+    margin-top: 5rem;
+    
+    display:  flex;
+    align-items:  center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .video-container{
+        flex: 1 1 42rem;
+
+        video{
+            width: 100%;
+            border-radius: 1rem;
+        }
+    }
+    .content{
+        flex: 1 1 42rem;
+    }
+
+}
+
+
 
 
 
